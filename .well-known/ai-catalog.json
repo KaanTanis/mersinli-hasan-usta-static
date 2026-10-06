@@ -1,0 +1,44 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Mersinli Hasan Usta Tantuni",
+    "identifier": "mersinlihasanustatantuni.com",
+    "documentationUrl": "https://www.mersinlihasanustatantuni.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:mersinlihasanustatantuni.com:site:llms-txt",
+      "type": "text/plain",
+      "url": "https://www.mersinlihasanustatantuni.com/llms.txt",
+      "displayName": "llms.txt",
+      "description": "LLM-readable site overview per llmstxt.org v2.",
+      "tags": ["llms.txt", "restaurant", "tantuni", "mersin"],
+      "version": "1.0.0",
+      "updatedAt": "2026-10-06T22:00:00Z",
+      "publisher": {
+        "identifier": "mersinlihasanustatantuni.com",
+        "displayName": "Mersinli Hasan Usta Tantuni",
+        "identityType": "dns"
+      }
+    },
+    {
+      "identifier": "urn:air:mersinlihasanustatantuni.com:site:homepage-md",
+      "type": "text/markdown",
+      "url": "https://www.mersinlihasanustatantuni.com/index.md",
+      "displayName": "Homepage (Markdown)",
+      "description": "Markdown summary: contact, menu, FAQ for agents.",
+      "tags": ["menu", "faq", "contact", "mersin"],
+      "version": "1.0.0",
+      "updatedAt": "2026-10-06T22:00:00Z",
+      "publisher": {
+        "identifier": "mersinlihasanustatantuni.com",
+        "displayName": "Mersinli Hasan Usta Tantuni",
+        "identityType": "dns"
+      }
+    }
+  ],
+  "metadata": {
+    "locale": "tr-TR",
+    "category": "restaurant"
+  }
+}
