@@ -165,8 +165,7 @@
 
   <link rel="preload" as="image" type="image/webp" href="assets/hero-640.webp" fetchpriority="high"
     imagesrcset="assets/hero-640.webp 640w, assets/hero-960.webp 960w, assets/hero-1280.webp 1280w"
-    imagesizes="(max-width:1120px) 100vw, 50vw" />
-  <link rel="preload" as="image" type="image/png" href="assets/logo-320.png" />
+    imagesizes="(max-width:560px) 100vw, (max-width:1120px) 100vw, 50vw" />
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -210,9 +209,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" /></noscript>
 
   <style>
     :root {
@@ -315,9 +314,14 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(247, 245, 240, .84);
-      backdrop-filter: blur(18px);
+      background: rgba(247, 245, 240, .96);
       border-bottom: 1px solid rgba(15,16,16,.08);
+    }
+    @media (min-width: 861px) {
+      header {
+        background: rgba(247, 245, 240, .84);
+        backdrop-filter: blur(18px);
+      }
     }
     .nav {
       min-height: 82px;
@@ -1019,6 +1023,12 @@
       transition: opacity .7s ease, transform .7s ease;
     }
     .reveal.is-visible { opacity: 1; transform: none; }
+    /* LCP: hero must paint immediately — do not wait for JS */
+    .hero .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
 
     .hidden { display: none !important; }
 
@@ -1142,7 +1152,7 @@
       </div>
 
       <div class="hero-visual reveal">
-        <img src="assets/hero-960.webp" srcset="assets/hero-640.webp 640w, assets/hero-960.webp 960w, assets/hero-1280.webp 1280w, assets/hero.webp 1600w" sizes="(max-width:1120px) 100vw, 50vw" alt="Mersinli Hasan Usta Tantuni şubesi" fetchpriority="high" decoding="async" width="1600" height="1067" />
+        <img src="assets/hero-640.webp" srcset="assets/hero-640.webp 640w, assets/hero-960.webp 960w, assets/hero-1280.webp 1280w" sizes="(max-width:560px) 100vw, (max-width:1120px) 100vw, 50vw" alt="Mersinli Hasan Usta Tantuni şubesi" fetchpriority="high" decoding="sync" width="1600" height="1067" />
       </div>
     </section>
 
@@ -1620,8 +1630,17 @@
       });
 
       const bootAnalytics = () => window.loadHasanAnalytics?.();
-      window.addEventListener('load', bootAnalytics, { once: true });
-      setTimeout(bootAnalytics, 4000);
+      const scheduleAnalytics = () => {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(bootAnalytics, { timeout: 8000 });
+        } else {
+          setTimeout(bootAnalytics, 3500);
+        }
+      };
+      window.addEventListener('load', scheduleAnalytics, { once: true });
+      ['scroll', 'pointerdown', 'keydown'].forEach((ev) => {
+        window.addEventListener(ev, bootAnalytics, { once: true, passive: true });
+      });
     })();
   </script>
 </body>
