@@ -1,0 +1,52 @@
+Cloudflare cache — mersinlihasanustatantuni.com (static)
+========================================================
+
+Öneri: Origin (nginx) Cache-Control göndersin; Cloudflare "Standard" cache level + aşağıdaki Cache Rules.
+Böylece HTML güncellenince purge kolay, asset'ler edge'de aylar kalır → TTFB/LCP düşer.
+
+1) Cache Rules (Dashboard → Caching → Cache Rules) — sırayla
+
+Rule A — Bypass HTML (güvenli deploy)
+  If: Hostname equals mersinlihasanustatantuni.com OR www.mersinlihasanustatantuni.com
+  And: URI Path equals /
+  Or: URI Path ends with /index.html
+  Then: Cache eligibility = Bypass cache
+  (Alternatif: Edge TTL = 2 hours + "Origin Cache Control" ON — daha agresif edge cache)
+
+Rule B — Long cache assets
+  If: URI Path starts with /assets/
+  Then: Cache eligibility = Eligible for cache
+        Edge TTL = 1 month (or "Ignore cache-control" + 1 year if filenames are content-hashed)
+        Browser TTL = Respect origin
+
+Rule C — Static extensions (logo, webp outside /assets if any)
+  If: URI Path matches regex \.(webp|png|jpg|jpeg|gif|ico|svg|woff2|css|js)$
+  Then: Edge TTL = 1 month, Browser TTL = Respect origin
+
+Rule D — robots / sitemap / llms
+  If: URI Path is in {/robots.txt, /sitemap.xml, /llms.txt}
+  Then: Edge TTL = 1 day (robots) or 1 hour (sitemap, llms)
+
+2) Speed settings (özet)
+  • Auto Minify: CSS + JS (HTML kapalı — inline CSS var)
+  • Brotli: ON
+  • Early Hints: ON
+  • HTTP/2 + HTTP/3: ON
+  • Tiered Cache (Pro+): varsa aç
+
+3) Deploy sonrası
+  • Sadece index.html değiştiyse: Caching → Purge → Custom purge → https://www.mersinlihasanustatantuni.com/
+  • Asset dosya adı değiştiyse purge gerekmez (yeni URL = yeni cache key)
+
+4) Origin ile uyum
+  nginx deploy/nginx/tantuni.conf:
+  • index.html → max-age=0, must-revalidate
+  • /assets/* → max-age=31536000, immutable
+
+5) Laravel kalıntısı
+  Sunucuda index.php kaldıysa silin veya nginx'te PHP location kapalı (conf'ta return 444).
+  try_files artık /index.html — PHP-FPM'e gitmez.
+
+Test:
+  curl -sI https://www.mersinlihasanustatantuni.com/assets/hero-640.webp | grep -i cf-cache
+  curl -sI https://www.mersinlihasanustatantuni.com/ | grep -i cache-control
