@@ -3,9 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#101010" />
-  <meta name="description" content="Mersinli Hasan Usta Tantuni — Tantuninin En Taze Hali." />
-  <title>Mersinli Hasan Usta Tantuni | En Taze Tantuni</title>
+  <meta name="theme-color" content="#f7f5f0" />
+  <title>Mersinli Hasan Usta Tantuni - En Taze Tantuni</title>
+  <meta name="description" content="Mersinli Hasan Usta Tantuni, taze ve lezzetli tantunileri ile Mersin’in en iyi tantuni restoranlarından biridir." />
+  <link rel="canonical" href="https://www.mersinlihasanustatantuni.com" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+
+  <meta property="og:title" content="Mersinli Hasan Usta Tantuni - En Taze Tantuni" />
+  <meta property="og:description" content="Mersinli Hasan Usta Tantuni, taze ve lezzetli tantunileri ile Mersin’in en iyi tantuni restoranlarından biridir." />
+  <meta property="og:locale" content="tr" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hasan Usta" />
+  <meta property="og:application-name" content="Hasan Usta" />
+  <meta property="og:url" content="https://www.mersinlihasanustatantuni.com" />
+  <meta property="og:image" content="https://www.mersinlihasanustatantuni.com/logo.png" />
+
+  <meta name="twitter:title" content="Mersinli Hasan Usta Tantuni - En Taze Tantuni" />
+  <meta name="twitter:description" content="Mersinli Hasan Usta Tantuni, taze ve lezzetli tantunileri ile Mersin’in en iyi tantuni restoranlarından biridir." />
+  <meta name="twitter:image" content="https://www.mersinlihasanustatantuni.com/logo.png" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Mersinli Hasan Usta Tantuni - En Taze Tantuni","description":"Mersinli Hasan Usta Tantuni, taze ve lezzetli tantunileri ile Mersin’in en iyi tantuni restoranlarından biridir.","image":{"@type":"ImageObject","url":"https://www.mersinlihasanustatantuni.com/logo.png","height":800,"width":1200},"@id":"https://www.mersinlihasanustatantuni.com","url":"https://www.mersinlihasanustatantuni.com","headline":"Mersinli Hasan Usta Tantuni - En Taze Tantuni","isPartOf":{"@id":"https://www.mersinlihasanustatantuni.com/#website"},"publisher":{"@id":"https://www.mersinlihasanustatantuni.com/#organization","@type":"Organization","name":"Hasan Usta","logo":{"@type":"ImageObject","url":"https://www.mersinlihasanustatantuni.com/logo.png","width":300,"height":300}},"mainEntityOfPage":{"@id":"https://www.mersinlihasanustatantuni.com","@type":"WebPage"}}</script>
+
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFZ44HDPE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YFZ44HDPE7');
+    gtag('config', 'AW-17880368457');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17880368457"></script>
+  <!-- Event snippet for Tıkla ve ara conversion -->
+  <script>
+    function gtag_report_conversion(url) {
+      var done = false;
+      var callback = function () {
+        if (done) return;
+        done = true;
+        if (typeof url != 'undefined') {
+          window.location = url;
+        }
+      };
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17880368457/J2n0CPC90JMdEMmKg85C',
+          'value': 1.0,
+          'currency': 'TRY',
+          'event_callback': callback
+        });
+        setTimeout(callback, 800);
+      } else {
+        callback();
+      }
+      return false;
+    }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NVMLBDD9');</script>
+  <!-- End Google Tag Manager -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -183,6 +244,20 @@
       align-items: center;
       justify-content: center;
     }
+    .ui-icon {
+      flex-shrink: 0;
+      display: inline-grid;
+      place-items: center;
+      line-height: 0;
+    }
+    .ui-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .ui-icon--call { width: 18px; height: 18px; }
+    .order-mini .ui-icon { width: 19px; height: 19px; }
+    .quick-nav .ui-icon { width: 15px; height: 15px; margin-left: 2px; }
     .hamburger {
       display: none;
       border: 0;
@@ -194,68 +269,41 @@
     }
 
     .hero {
-      min-height: min(780px, calc(100vh - 118px));
-      background:
-        radial-gradient(circle at 77% 22%, rgba(226,31,47,.14), transparent 30%),
-        linear-gradient(120deg, #121313 0%, #1b1c1c 58%, #101010 100%);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      position: relative;
-      isolation: isolate;
+      min-height: min(760px, calc(100vh - 118px));
+      background: var(--cream);
+      color: var(--ink);
+      display: grid;
+      grid-template-columns:
+        max(28px, calc((100vw - var(--max)) / 2))
+        minmax(0, 1fr)
+        minmax(460px, 1.02fr);
+      align-items: stretch;
       overflow: clip;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.4), transparent);
-      pointer-events: none;
+    .hero-copy {
+      grid-column: 2;
+      padding: 80px 56px 88px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      container-type: inline-size;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 42vw;
-      height: 42vw;
-      right: -18vw;
-      bottom: -26vw;
-      background: var(--red);
-      opacity: .18;
-      filter: blur(10px);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, .94fr) minmax(440px, 1.06fr);
-      gap: 54px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-      padding: 76px 0 96px;
-    }
-    .hero-copy { max-width: 650px; }
-    .hero .eyebrow { color: #fff; }
-    .hero .eyebrow::before { background: var(--red); }
+    .hero .eyebrow { color: var(--ink); }
     .hero h1 {
       margin: 22px 0 24px;
-      font: 700 clamp(58px, 8.2vw, 108px)/.88 "Space Grotesk", sans-serif;
-      letter-spacing: -.065em;
+      font: 700 clamp(48px, 11.5cqi, 86px)/.9 "Space Grotesk", sans-serif;
+      letter-spacing: -.06em;
     }
     .hero h1 em {
       font-style: normal;
-      color: #ff4d59;
+      color: var(--red);
     }
     .hero-sub {
       margin: 0;
-      color: rgba(255,255,255,.68);
+      color: var(--muted);
       font-size: clamp(16px, 1.8vw, 20px);
       line-height: 1.6;
-      max-width: 520px;
+      max-width: 460px;
     }
     .hero-actions {
       margin-top: 34px;
@@ -280,15 +328,15 @@
     .btn-primary { background: var(--red); color: #fff; }
     .btn-primary:hover { background: #f12b39; }
     .btn-light { background: #fff; color: var(--ink); }
-    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.18); }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.04); }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: rgba(15,16,16,.16); }
+    .btn-ghost:hover { border-color: rgba(15,16,16,.4); background: rgba(15,16,16,.04); }
 
     .hero-note {
       margin-top: 24px;
       display: flex;
       align-items: center;
       gap: 10px;
-      color: rgba(255,255,255,.48);
+      color: var(--muted);
       font-size: 12px;
     }
     .hero-note .dot {
@@ -300,59 +348,18 @@
     }
 
     .hero-visual {
-      min-height: 500px;
+      grid-column: 3;
       position: relative;
-      display: grid;
-      place-items: center;
+      min-height: 460px;
     }
-    .hero-card {
-      width: min(100%, 680px);
-      aspect-ratio: 1.08;
-      border-radius: 40px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.11), rgba(255,255,255,.025)),
-        rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 45px 100px rgba(0,0,0,.38);
-      transform: rotate(2.4deg);
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .hero-card::before {
-      content: "HASAN USTA";
+    .hero-visual img {
       position: absolute;
-      right: 28px;
-      top: 24px;
-      color: rgba(255,255,255,.16);
-      font: 700 12px "Space Grotesk", sans-serif;
-      letter-spacing: .28em;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 58% 42%;
     }
-    .hero-card img {
-      width: 94%;
-      filter: drop-shadow(0 26px 22px rgba(0,0,0,.38));
-      transform: rotate(-2.4deg) scale(1.04);
-    }
-    .hero-sticker {
-      position: absolute;
-      left: 2%;
-      bottom: 8%;
-      width: 132px;
-      height: 132px;
-      border-radius: 50%;
-      background: var(--red);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font: 700 15px/.95 "Space Grotesk", sans-serif;
-      letter-spacing: -.02em;
-      box-shadow: 0 20px 44px rgba(0,0,0,.34);
-      transform: rotate(-9deg);
-      border: 8px solid #181919;
-    }
-    .hero-sticker span { font-size: 26px; margin-top: 7px; display: block; }
 
     .quick-nav {
       background: var(--red);
@@ -382,7 +389,24 @@
     }
     .quick-nav a:hover { background: rgba(255,255,255,.13); }
 
-    .menu-section { background: #fff; }
+    .menu-section {
+      background:
+        radial-gradient(ellipse 85% 55% at 8% 0%, rgba(226,31,47,.08), transparent 52%),
+        radial-gradient(ellipse 70% 50% at 92% 12%, rgba(233,174,66,.11), transparent 48%),
+        linear-gradient(180deg, #fff 0%, var(--cream) 58%, #ebe6dc 100%);
+    }
+    .menu-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.55) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.32) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.22), transparent 85%);
+      pointer-events: none;
+    }
+    .menu-section .container { position: relative; z-index: 1; }
     .menu-topline {
       display: flex;
       align-items: center;
@@ -398,22 +422,41 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.38);
+      -webkit-backdrop-filter: blur(28px) saturate(1.45);
+      backdrop-filter: blur(28px) saturate(1.45);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow:
+        0 16px 44px rgba(15,16,16,.07),
+        inset 0 1px 0 rgba(255,255,255,.92);
     }
     .filter {
       padding: 11px 15px;
       border-radius: 999px;
-      background: var(--cream);
-      border: 1px solid transparent;
+      background: rgba(255,255,255,.42);
+      -webkit-backdrop-filter: blur(18px) saturate(1.25);
+      backdrop-filter: blur(18px) saturate(1.25);
+      border: 1px solid rgba(255,255,255,.58);
       color: #565656;
       font: 700 12px "DM Sans", sans-serif;
       cursor: pointer;
       transition: all .2s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
     }
-    .filter:hover { color: var(--ink); }
+    .filter:hover {
+      color: var(--ink);
+      background: rgba(255,255,255,.62);
+      border-color: rgba(255,255,255,.85);
+    }
     .filter.active {
-      background: var(--ink);
+      background: rgba(15,16,16,.82);
+      -webkit-backdrop-filter: blur(20px) saturate(1.2);
+      backdrop-filter: blur(20px) saturate(1.2);
       color: #fff;
-      border-color: var(--ink);
+      border-color: rgba(255,255,255,.14);
+      box-shadow: 0 10px 28px rgba(15,16,16,.18), inset 0 1px 0 rgba(255,255,255,.12);
     }
 
     .products {
@@ -422,23 +465,34 @@
       gap: 14px;
     }
     .product {
-      background: #fff;
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,.48);
+      -webkit-backdrop-filter: blur(26px) saturate(1.5);
+      backdrop-filter: blur(26px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,.78);
       border-radius: 22px;
       overflow: hidden;
       min-width: 0;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      box-shadow:
+        0 14px 40px rgba(15,16,16,.07),
+        inset 0 1px 0 rgba(255,255,255,.95);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
     }
     .product:hover {
       transform: translateY(-6px);
-      border-color: #dad4ca;
-      box-shadow: 0 20px 50px rgba(15,16,16,.09);
+      background: rgba(255,255,255,.66);
+      border-color: rgba(255,255,255,.92);
+      box-shadow:
+        0 24px 56px rgba(15,16,16,.11),
+        inset 0 1px 0 rgba(255,255,255,1);
     }
     .product-media {
       aspect-ratio: 1 / .88;
       padding: 10px;
-      background: #fbfaf7;
+      background: rgba(251,250,247,.38);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      backdrop-filter: blur(16px) saturate(1.2);
       overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.45);
     }
     .product-media img {
       width: 100%;
@@ -447,7 +501,10 @@
       transition: transform .45s cubic-bezier(.22,1,.36,1);
     }
     .product:hover .product-media img { transform: scale(1.06); }
-    .product-body { padding: 18px; }
+    .product-body {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.22));
+    }
     .product-cat {
       font-size: 10px;
       font-weight: 700;
@@ -465,7 +522,7 @@
     .product-foot {
       margin-top: 16px;
       padding-top: 13px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(255,255,255,.55);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -783,10 +840,10 @@
     .hidden { display: none !important; }
 
     @media (max-width: 1120px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-copy { max-width: 820px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy, .hero-visual { grid-column: auto; }
+      .hero-copy { padding: 56px max(18px, calc((100vw - var(--max)) / 2)) 36px; }
       .hero-visual { min-height: 420px; }
-      .hero-card { width: min(100%, 720px); }
       .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .feature-wrap, .location-grid { grid-template-columns: 1fr; }
       .map, .map iframe { min-height: 420px; }
@@ -828,11 +885,8 @@
       .topbar { font-size: 10px; }
       .nav { min-height: 72px; }
       .brand img { width: 142px; }
-      .hero-inner { padding: 56px 0 72px; }
-      .hero h1 { font-size: clamp(50px, 17vw, 76px); }
-      .hero-card { border-radius: 26px; }
-      .hero-sticker { width: 96px; height: 96px; font-size: 11px; border-width: 6px; }
-      .hero-sticker span { font-size: 20px; }
+      .hero-copy { padding: 40px 12px 28px; }
+      .hero h1 { font-size: clamp(46px, 14vw, 68px); }
       .hero-visual { min-height: 280px; }
       .products { grid-template-columns: 1fr; }
       .product-name { min-height: auto; }
@@ -851,6 +905,8 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVMLBDD9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="topbar">
     <span>Sipariş Hattı</span>
@@ -874,7 +930,7 @@
       </nav>
 
       <a class="nav-cta" href="tel:+903243265566" aria-label="Telefonla sipariş ver">
-        <span class="icon">↗</span>
+        <span class="icon ui-icon ui-icon--call" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         0324 326 55 66
       </a>
 
@@ -886,39 +942,34 @@
 
   <main>
     <section class="hero" id="anasayfa">
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Mersinli Hasan Usta Tantuni</span>
-          <h1>Tantuninin<br><em>en taze</em> hali.</h1>
-          <p class="hero-sub">Dumanı üstünde, lavaşı çıtır tantuniler. Mersin'in sevilen tadını yerinde deneyin veya telefon üzerinden sipariş verin.</p>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Mersinli Hasan Usta Tantuni</span>
+        <h1>Tantuninin<br><em>en taze</em> hali.</h1>
+        <p class="hero-sub">Dumanı üstünde, lavaşı çıtır tantuniler. Mersin'in sevilen tadını yerinde deneyin veya telefon üzerinden sipariş verin.</p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#menu">Menüyü Gör <span aria-hidden="true">↓</span></a>
-            <a class="btn btn-ghost" href="tel:+903243265566">Telefon Siparişi</a>
-          </div>
-
-          <div class="hero-note">
-            <span class="dot"></span>
-            Taze hazırlanır · Hızlı servis · Kapıda kredi kartı
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Menüyü Gör <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="tel:+903243265566">Telefon Siparişi</a>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="hero-card">
-            <img src="assets/product-et-lavas.webp" alt="Et Tantuni - Lavaş Ekmek" fetchpriority="high" />
-          </div>
-          <div class="hero-sticker">GERÇEK<br>TANTUNİ<span>♥</span></div>
+        <div class="hero-note">
+          <span class="dot"></span>
+          Taze hazırlanır · Hızlı servis · Kapıda kredi kartı
         </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <img src="assets/hero.webp" alt="Mersinli Hasan Usta Tantuni şubesi" fetchpriority="high" width="1600" height="1067" />
       </div>
     </section>
 
     <nav class="quick-nav" aria-label="Hızlı menü">
       <div class="container quick-nav-inner">
-        <a href="#menu">Hepsi <span>↘</span></a>
-        <a href="#menu" data-quick="et">Et Tantuni <span>↘</span></a>
-        <a href="#menu" data-quick="biftek">Biftek Tantuni <span>↘</span></a>
-        <a href="#menu" data-quick="tavuk">Tavuk Tantuni <span>↘</span></a>
-        <a href="#menu" data-quick="tatli">Tatlılar <span>↘</span></a>
+        <a href="#menu">Hepsi <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="#menu" data-quick="et">Et Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="#menu" data-quick="biftek">Biftek Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="#menu" data-quick="tavuk">Tavuk Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="#menu" data-quick="tatli">Tatlılar <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </nav>
 
@@ -949,7 +1000,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Lavaş sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -958,7 +1009,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Açık Ekmek sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -967,7 +1018,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Sütlü Somun sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -976,7 +1027,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">210₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Yoğurtlu sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">210₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -985,7 +1036,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Lavaş sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -994,7 +1045,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Açık Ekmek sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1003,7 +1054,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">220₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Sütlü Somun sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">220₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1012,7 +1063,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">230₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Yoğurtlu sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">230₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1021,7 +1072,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Lavaş sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1030,7 +1081,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Açık Ekmek sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1039,7 +1090,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">130₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Sütlü Somun sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">130₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1048,7 +1099,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">160₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Yoğurtlu sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">160₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1057,7 +1108,7 @@
             <div class="product-body">
               <div class="product-cat">Tatlılar</div>
               <h3 class="product-name">Künefe</h3>
-              <div class="product-foot"><span class="price">190₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Künefe sipariş et">↗</a></div>
+              <div class="product-foot"><span class="price">190₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Künefe sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
         </div>
@@ -1346,6 +1397,14 @@
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      document.addEventListener('click', (event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const link = event.target.closest('a[href^="tel:"]');
+        if (!link) return;
+        event.preventDefault();
+        gtag_report_conversion(link.getAttribute('href'));
+      });
     })();
   </script>
 </body>
