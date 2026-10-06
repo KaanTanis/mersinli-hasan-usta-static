@@ -37,5 +37,19 @@ for item in "${files[@]}"; do
     -A 'Mozilla/5.0 static-site-asset-fetcher' "$url" -o "$ASSETS/$name"
 done
 
+if command -v cwebp >/dev/null 2>&1; then
+  printf '\n→ responsive variants\n'
+  cwebp -quiet -q 82 -resize 640 0 "$ASSETS/hero.webp" -o "$ASSETS/hero-640.webp"
+  cwebp -quiet -q 84 -resize 960 0 "$ASSETS/hero.webp" -o "$ASSETS/hero-960.webp"
+  cwebp -quiet -q 85 -resize 1280 0 "$ASSETS/hero.webp" -o "$ASSETS/hero-1280.webp"
+  for f in "$ASSETS"/product-*.webp; do
+    [[ "$f" == *-480.webp ]] && continue
+    cwebp -quiet -q 82 -resize 480 0 "$f" -o "${f%.webp}-480.webp"
+  done
+fi
+if command -v sips >/dev/null 2>&1 && [[ -f "$ASSETS/logo.png" ]]; then
+  sips -Z 320 "$ASSETS/logo.png" --out "$ASSETS/logo-320.png" >/dev/null
+fi
+
 printf '\nAssets ready: %s\n' "$ASSETS"
 ls -lh "$ASSETS"

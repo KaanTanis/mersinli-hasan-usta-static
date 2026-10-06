@@ -1,0 +1,74 @@
+Mersinli Hasan Usta — Google Ads Quality Score playbook
+=========================================================
+
+Landing URL (tüm gruplar): https://www.mersinlihasanustatantuni.com/
+Dönüşüm: Telefon tıklaması (gtag_report_conversion) + AW-17880368457
+
+1) Kampanya yapısı (Search)
+---------------------------
+• HU | Marka — yüksek CTR, düşük CPC; Exact/Phrase ağırlıklı
+• HU | Ürün — yoğurtlu / biftek; Final URL #menu (isteğe bağlı, ana URL de olur)
+• HU | Lokasyon — Mersin, Yenişehir, “ünlü / en yakın” niyeti
+• HU | Sipariş — tantuni sipariş, telefon niyeti; call extension zorunlu
+• HU | Geniş — sadece düşük teklif + sıkı negatif kelime listesi
+
+Konum hedefleme: Mersin ili + radius (Yenişehir merkez 8–15 km) veya “Presence: Mersin”.
+Dil: Türkçe.
+
+2) Reklam metni (RSA önerisi — headline ≤30, description ≤90 karakter)
+-----------------------------------------------------------------------
+Headlines (pin 1. pozisyon: marka/lokasyon):
+  - Hasan Usta Tantuni
+  - Mersin Yenişehir Tantuni
+  - Yoğurtlu & Biftek Tantuni
+  - Tantuni Sipariş Hattı
+  - 0324 326 55 66
+  - Mersin'in Ünlü Tantunisi
+  - Hemen Telefon Siparişi
+  - WhatsApp ile Sipariş
+
+Descriptions:
+  - Yoğurtlu, biftek ve et tantuni. Yenişehir'de yerinde veya telefonla sipariş.
+  - Mersinli Hasan Usta — hızlı servis, kapıda kredi kartı. Menüyü sitede görün.
+  - En yakın tantuni için ara: 0324 326 55 66. Adres: İsmet İnönü Bulvarı Yenişehir.
+
+3) Quality Score hizalama (sayfa ↔ anahtar kelime)
+--------------------------------------------------
+Sayfada güncellendi:
+  • Title + meta description: marka + Mersin Yenişehir + yoğurtlu/biftek + telefon
+  • H1: Hasan Usta Tantuni + Mersin Yenişehir
+  • Hero + FAQ + konum: tantuni sipariş, telefon, ünlü/en yakın tantuni ifadeleri
+  • Schema: Restaurant, Menu, FAQPage
+
+Reklam grubu başına pin:
+  • Marka grubu → H1 + title ile aynı “Hasan Usta Tantuni”
+  • Ürün grubu → headline’da “Yoğurtlu Tantuni” veya “Biftek Tantuni”
+  • Lokasyon → “Mersin Yenişehir Tantuni”
+  • Sipariş → “Tantuni Sipariş” + telefon extension
+
+4) Negatif anahtar kelimeler (örnek)
+------------------------------------
+ücretsiz, tarif, nasıl yapılır, iş ilanı, franchise, ankara, istanbul, izmir, vegan,
+diyet, kalori, wikipedia, oyun
+
+5) Uzantılar
+------------
+• Call: 0324 326 55 66
+• Location: Google Business Profile ile eşleşmeli (adres site ile birebir)
+• Sitelink: Menü (#menu), Konum (#konum), Sipariş (#iletisim), SSS (#sss)
+• Callout: Kapıda kredi kartı · WhatsApp sipariş · Yoğurtlu tantuni · Biftek tantuni
+
+6) GEO / LLM (Generative Engine Optimization)
+---------------------------------------------
+• /llms.txt — yapay zeka özetleri için canonical NAP + intent tablosu
+• /robots.txt — major LLM botları Allow
+• JSON-LD FAQ — “telefon”, “yoğurtlu”, “Mersin ünlü tantuni” soruları
+• Google Business Profile: kategori “Tantuni restoranı”, açıklamada aynı anahtarlar
+
+7) Ölçüm
+--------
+• Search terms raporu: haftalık; broad grubundan gelen alakasız terimleri negatife al
+• QS bileşenleri: Expected CTR (RSA test), Ad relevance (grup başına 5–12 kelime),
+  Landing page experience (LCP — mevcut webp hero korunuyor)
+
+Import: google-ads/keywords.csv → Google Ads Editor → Account → Import → From file
