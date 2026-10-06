@@ -28,6 +28,3 @@ Et, biftek ve tavuk tantuni; lavaş, açık ekmek, sütlü somun, yoğurtlu seç
 
 Ana HTML sayfasında Schema.org JSON-LD: Restaurant, LocalBusiness, Menu, FAQPage.
 
-## Not
-
-Bu dosya ajanlar için sadeleştirilmiş özetdir. Saat, puan veya e-posta gibi sitede olmayan bilgileri eklemeyin.
