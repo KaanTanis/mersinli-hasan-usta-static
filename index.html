@@ -955,7 +955,7 @@
       position: fixed;
       left: 10px;
       right: 10px;
-      bottom: 10px;
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px));
       z-index: 40;
       display: none;
       grid-template-columns: 1fr 1fr;
@@ -999,6 +999,7 @@
       transition: transform .35s cubic-bezier(.22,1,.36,1);
     }
     .cookie.show { transform: translateY(0); }
+    .cookie.is-dismissed { display: none !important; }
     .cookie p {
       margin: 0;
       flex: 1;
@@ -1137,7 +1138,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
       .mobile-bar { display: grid; }
-      .cookie { bottom: 76px; }
+      .cookie { bottom: calc(108px + env(safe-area-inset-bottom, 0px)); z-index: 45; }
     }
 
     @media (max-width: 560px) {
@@ -1156,7 +1157,7 @@
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
       .cookie {
-        bottom: 74px;
+        bottom: calc(108px + env(safe-area-inset-bottom, 0px));
         flex-wrap: wrap;
         padding: 8px 10px;
         gap: 8px;
@@ -1561,7 +1562,7 @@
     <p>Deneyimi iyileştirmek için çerez kullanıyoruz.</p>
     <div class="cookie-actions">
       <button class="cookie-btn cookie-policy" id="cookiePolicy">Detay</button>
-      <button class="cookie-btn cookie-accept" id="acceptCookies">Kabul</button>
+      <button class="cookie-btn cookie-accept" id="acceptCookies" type="button">Kabul</button>
     </div>
   </div>
 
@@ -1694,21 +1695,36 @@
         document.body.classList.remove('lock');
       };
 
+      const placeCookie = () => {
+        const bar = document.querySelector('.mobile-bar');
+        if (!cookie || !bar || getComputedStyle(bar).display === 'none') {
+          if (cookie) cookie.style.bottom = '';
+          return;
+        }
+        const dockTop = window.innerHeight - bar.getBoundingClientRect().top;
+        cookie.style.bottom = `${Math.ceil(dockTop + 12)}px`;
+      };
+
       if (!localStorage.getItem('hasanUstaCookies') && cookie) {
         let cookieShown = false;
         const revealCookie = () => {
           if (cookieShown || window.scrollY < 420) return;
           cookieShown = true;
+          placeCookie();
           cookie.classList.add('show');
           window.removeEventListener('scroll', revealCookie);
         };
         window.addEventListener('scroll', revealCookie, { passive: true });
+        window.addEventListener('resize', placeCookie);
         revealCookie();
       }
 
-      acceptCookies?.addEventListener('click', () => {
-        localStorage.setItem('hasanUstaCookies', '1');
+      acceptCookies?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        try { localStorage.setItem('hasanUstaCookies', '1'); } catch (_) {}
         cookie?.classList.remove('show');
+        cookie?.classList.add('is-dismissed');
       });
       cookiePolicy?.addEventListener('click', openPolicyModal);
       openPolicy?.addEventListener('click', openPolicyModal);
