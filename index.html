@@ -244,6 +244,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    #menu, #konum, #iletisim, #sss, #anasayfa { scroll-margin-top: 110px; }
     body {
       margin: 0;
       color: var(--ink);
@@ -1660,6 +1661,23 @@
           document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       });
+
+      const hashFilters = {
+        'et-tantuni': 'et',
+        'biftek-tantuni': 'biftek',
+        'tavuk-tantuni': 'tavuk'
+      };
+
+      const applyHash = () => {
+        const key = decodeURIComponent(location.hash.replace(/^#/, '')).toLowerCase();
+        const filter = hashFilters[key];
+        if (!filter) return;
+        applyFilter(filter);
+        document.getElementById('menu')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+      };
+
+      applyHash();
+      window.addEventListener('hashchange', applyHash);
 
       const revealEls = document.querySelectorAll('.reveal');
       const revealObserver = new IntersectionObserver((entries) => {
