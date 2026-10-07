@@ -1068,25 +1068,24 @@
 
     .hidden { display: none !important; }
 
-    .menu-lead, .menu-group { margin-bottom: 42px; }
-    .menu-lead h2, .menu-group h2 {
+    .menu-group { margin-bottom: 42px; }
+    .menu-group h2 {
       margin: 0 0 10px;
       font: 700 clamp(28px, 4vw, 44px)/1.05 "Space Grotesk", sans-serif;
       letter-spacing: -.045em;
     }
-    .menu-lead p, .menu-group p {
+    .menu-group p {
       margin: 0 0 18px;
-      max-width: 68ch;
+      max-width: 58ch;
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 14px;
+      line-height: 1.55;
     }
-    .menu-group p a { color: var(--red-dark); text-decoration: underline; text-underline-offset: 3px; }
 
     html:has(#et-tantuni:target) .menu-group:not(#et-tantuni),
     html:has(#biftek-tantuni:target) .menu-group:not(#biftek-tantuni),
     html:has(#tavuk-tantuni:target) .menu-group:not(#tavuk-tantuni),
-    html:has(#tatli:target) .menu-group:not(#tatli),
-    html:has(.menu-group:target) #yogurtlu-tantuni {
+    html:has(#tatli:target) .menu-group:not(#tatli) {
       display: none;
     }
     html:has(#et-tantuni:target) a.filter[data-filter="all"],
@@ -1280,7 +1279,7 @@
             <span class="eyebrow">Menümüz</span>
             <h2>Mersin Tantuni Menüsü</h2>
           </div>
-          <p>Et tantuni, biftek tantuni ve tavuk tantuni. Yenişehir Hasan Usta'da lavaş, açık ekmek, sütlü somun ve yoğurtlu seçeneklerin güncel fiyatları burada.</p>
+          <p id="yogurtlu-tantuni">Yenişehir Hasan Usta'da yoğurtlu tantuni, et tantuni, biftek tantuni ve tavuk tantuni seçeneklerini inceleyin. Lavaş, açık ekmek ve sütlü somun sunumları güncel fiyatlarıyla burada.</p>
         </div>
 
         <div class="menu-topline">
@@ -1295,14 +1294,9 @@
         </div>
 
         <div id="products">
-          <div class="menu-lead" id="yogurtlu-tantuni">
-            <h2>Yoğurtlu Tantuni Mersin</h2>
-            <p>Yoğurtlu tantuni Mersin'de Hasan Usta'da et, biftek ve tavuk olarak hazırlanır. Lavaş veya ekmek yerine yoğurtlu seçeneği her grupta ayrı fiyatlanır. Sipariş hattı <a href="tel:+903243265566">0324 326 55 66</a>.</p>
-          </div>
-
           <div class="menu-group" id="et-tantuni" data-category="et">
             <h2>Et Tantuni Mersin</h2>
-            <p>Et tantuni Mersin'in klasik sac lezzeti. Hasan Usta Yenişehir'de lavaş, açık ekmek, sütlü somun ve yoğurtlu et tantuni sipariş edebilirsiniz. Ayrı sayfa: <a href="/et-tantuni/">Et Tantuni Mersin</a>.</p>
+            <p>Mersin Yenişehir'de hazırlanan klasik et tantuni. Lavaş, açık ekmek, sütlü somun ve yoğurtlu seçenekler.</p>
             <div class="products">
           <article class="product" data-category="et">
             <div class="product-media"><img src="assets/product-et-lavas-480.webp" srcset="assets/product-et-lavas-480.webp 480w, assets/product-et-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Lavaş Ekmek" /></div>
@@ -1344,7 +1338,7 @@
 
           <div class="menu-group" id="biftek-tantuni" data-category="biftek">
             <h2>Biftek Tantuni Mersin</h2>
-            <p>Biftek tantuni Mersin'de Hasan Usta Yenişehir şubesinde lavaş, açık ekmek, sütlü somun ve yoğurtlu seçenekleriyle sunulur. Telefon: <a href="tel:+903243265566">0324 326 55 66</a>. Ayrı sayfa: <a href="/biftek-tantuni/">Biftek Tantuni Mersin</a>.</p>
+            <p>Mersin Yenişehir'de biftek tantuni. Lavaş, açık ekmek, sütlü somun ve yoğurtlu seçeneklerle sunulur.</p>
             <div class="products">
           <article class="product" data-category="biftek">
             <div class="product-media"><img src="assets/product-biftek-lavas-480.webp" srcset="assets/product-biftek-lavas-480.webp 480w, assets/product-biftek-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Lavaş Ekmek" /></div>
@@ -1386,7 +1380,7 @@
 
           <div class="menu-group" id="tavuk-tantuni" data-category="tavuk">
             <h2>Tavuk Tantuni Mersin</h2>
-            <p>Tavuk tantuni Mersin menümüzde lavaş, açık ekmek, sütlü somun ve yoğurtlu olarak var. Hasan Usta Yenişehir'den yerinde veya telefonla sipariş: <a href="tel:+903243265566">0324 326 55 66</a>. Ayrı sayfa: <a href="/tavuk-tantuni/">Tavuk Tantuni Mersin</a>.</p>
+            <p>Tavuk tantuni Mersin Yenişehir menüsünde dört farklı sunumla hazırlanır.</p>
             <div class="products">
           <article class="product" data-category="tavuk">
             <div class="product-media"><img src="assets/product-tavuk-lavas-480.webp" srcset="assets/product-tavuk-lavas-480.webp 480w, assets/product-tavuk-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Lavaş Ekmek" /></div>
@@ -1713,7 +1707,6 @@
           group.classList.toggle('hidden', !show);
         });
 
-        document.getElementById('yogurtlu-tantuni')?.classList.toggle('hidden', filter !== 'all');
       };
 
       const hashFilters = {
