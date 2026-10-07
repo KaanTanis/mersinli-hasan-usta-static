@@ -21,4 +21,4 @@ assets/
 
 ## Dış bağımlılıklar
 
-Google Fonts kaldırıldı; sistem font stack kullanılıyor. Google Maps iframe ise harita işlevi nedeniyle harici olarak bırakıldı.
+Google Fonts kaldırıldı; **DM Sans** ve **Space Grotesk** `assets/fonts/` altında self-host edilir (`assets/fonts.css`). Google Maps iframe ise harita işlevi nedeniyle harici olarak bırakıldı.
