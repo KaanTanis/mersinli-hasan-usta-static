@@ -1,9 +1,8 @@
 Cloudflare — agresif cache (deploy sonrası Purge Everything)
 Site: mersinlihasanustatantuni.com
 
-Origin (nginx / _headers) özeti:
-  HTML / landing     → max-age=300, s-maxage=31536000  (edge 1 yıl, tarayıcı 5 dk)
-  /assets/*, görseller → max-age=31536000, immutable
+Origin (nginx) özeti:
+  Tüm statik içerik → max-age=86400, s-maxage=86400  (24 saat, tarayıcı + edge)
 
 Ölçüm (Google Ads gtag) edge cache’ten etkilenmez; tarayıcıda çalışır.
 
@@ -80,7 +79,7 @@ curl -sI "https://www.mersinlihasanustatantuni.com/" | tr -d '\r' | grep -iE 'cf
 curl -sI "https://www.mersinlihasanustatantuni.com/et-tantuni/" | tr -d '\r' | grep -iE 'cf-cache-status|cache-control'
 
 Beklenen cache-control (origin):
-  s-maxage=31536000
+  max-age=86400, s-maxage=86400
   cf-cache-status: HIT (warm cache)
 
 Sorun: cf-cache-status DYNAMIC sürekli → Bypass kuralı veya “Cache Level: No Query String” eski Page Rule kontrol et.

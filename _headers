@@ -1,43 +1,43 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Cache-Control: public, max-age=300, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /*.webp
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /*.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /robots.txt
-  Cache-Control: public, max-age=86400, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /sitemap.xml
-  Cache-Control: public, max-age=3600, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /llms.txt
-  Cache-Control: public, max-age=3600, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
   Content-Type: text/plain; charset=utf-8
 
 /index.md
-  Cache-Control: public, max-age=3600, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
   Content-Type: text/markdown; charset=utf-8
 
 /.well-known/ai-catalog.json
-  Cache-Control: public, max-age=3600, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
   Content-Type: application/ai-catalog+json; charset=utf-8
 
 /index.html
-  Cache-Control: public, max-age=300, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /et-tantuni/
-  Cache-Control: public, max-age=300, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /biftek-tantuni/
-  Cache-Control: public, max-age=300, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400
 
 /tavuk-tantuni/
-  Cache-Control: public, max-age=300, s-maxage=31536000
+  Cache-Control: public, max-age=86400, s-maxage=86400

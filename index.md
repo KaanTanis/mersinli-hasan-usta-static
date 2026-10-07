@@ -6,7 +6,7 @@ Mersin Yenişehir'de tantuni restoranı. Resmi web: https://www.mersinlihasanust
 
 - **Telefon sipariş:** 0324 326 55 66 (`+903243265566`)
 - **WhatsApp sipariş:** 0505 462 45 95
-- **Adres:** Hürriyet Mahallesi İsmet İnönü Bulvarı No:4/A, 33120 Yenişehir / Mersin, Türkiye
+- **Adres:** Hürriyet, İsmet İnönü Blv. Çekmez Apt No:292/A, 33120 Yenişehir/Mersin, Türkiye
 
 ## Menü (özet)
 

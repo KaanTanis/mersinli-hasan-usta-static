@@ -32,7 +32,7 @@ Headlines (pin 1. pozisyon: marka/lokasyon):
 Descriptions:
   - Yoğurtlu, biftek ve et tantuni. Yenişehir'de yerinde veya telefonla sipariş.
   - Mersinli Hasan Usta — hızlı servis, kapıda kredi kartı. Menüyü sitede görün.
-  - En yakın tantuni için ara: 0324 326 55 66. Adres: İsmet İnönü Bulvarı Yenişehir.
+  - En yakın tantuni için ara: 0324 326 55 66. Adres: İsmet İnönü Blv. Çekmez Apt 292/A Yenişehir.
 
 3) Quality Score hizalama (sayfa ↔ anahtar kelime)
 --------------------------------------------------
