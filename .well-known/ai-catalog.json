@@ -8,37 +8,35 @@
   "entries": [
     {
       "identifier": "urn:air:mersinlihasanustatantuni.com:site:llms-txt",
-      "type": "text/plain",
-      "url": "https://www.mersinlihasanustatantuni.com/llms.txt",
       "displayName": "llms.txt",
-      "description": "LLM-readable site overview per llmstxt.org v2.",
-      "tags": ["llms.txt", "restaurant", "tantuni", "mersin"],
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://www.mersinlihasanustatantuni.com/llms.txt",
+      "description": "Mersin Yenişehir Hasan Usta Tantuni: adres, telefon ve menü özeti.",
+      "tags": ["tantuni", "mersin", "yenisehir", "siparis"],
+      "representativeQueries": [
+        "Hasan Usta tantuni telefon numarası",
+        "Mersin Yenişehir tantuni adresi",
+        "yoğurtlu tantuni sipariş",
+        "biftek tantuni Mersin"
+      ],
       "version": "1.0.0",
-      "updatedAt": "2026-10-06T22:00:00Z",
-      "publisher": {
-        "identifier": "mersinlihasanustatantuni.com",
-        "displayName": "Mersinli Hasan Usta Tantuni",
-        "identityType": "dns"
-      }
+      "updatedAt": "2026-10-07T09:00:00Z"
     },
     {
       "identifier": "urn:air:mersinlihasanustatantuni.com:site:homepage-md",
-      "type": "text/markdown",
-      "url": "https://www.mersinlihasanustatantuni.com/index.md",
       "displayName": "Homepage (Markdown)",
-      "description": "Markdown summary: contact, menu, FAQ for agents.",
-      "tags": ["menu", "faq", "contact", "mersin"],
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://www.mersinlihasanustatantuni.com/index.md",
+      "description": "Menü, sipariş hattı ve Yenişehir adresi.",
+      "tags": ["menu", "iletisim", "konum"],
+      "representativeQueries": [
+        "Mersinli Hasan Usta nerede",
+        "tantuni siparişi nasıl verilir",
+        "tavuk tantuni fiyat",
+        "en yakın tantuni Yenişehir"
+      ],
       "version": "1.0.0",
-      "updatedAt": "2026-10-06T22:00:00Z",
-      "publisher": {
-        "identifier": "mersinlihasanustatantuni.com",
-        "displayName": "Mersinli Hasan Usta Tantuni",
-        "identityType": "dns"
-      }
+      "updatedAt": "2026-10-07T09:00:00Z"
     }
-  ],
-  "metadata": {
-    "locale": "tr-TR",
-    "category": "restaurant"
-  }
+  ]
 }

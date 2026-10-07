@@ -7,7 +7,9 @@ Dönüşüm: Telefon tıklaması (gtag_report_conversion) + AW-17880368457
 1) Kampanya yapısı (Search)
 ---------------------------
 • HU | Marka — yüksek CTR, düşük CPC; Exact/Phrase ağırlıklı
-• HU | Ürün — yoğurtlu / biftek; Final URL #menu (isteğe bağlı, ana URL de olur)
+• HU | Ürün — yoğurtlu → /#yogurtlu-tantuni ; biftek → /biftek-tantuni/
+  Et ve tavuk reklamı açılırsa: /et-tantuni/ ve /tavuk-tantuni/
+  Ürün gruplarında #konum kullanmayın. Konum yalnızca lokasyon sitelink’i: /#konum
 • HU | Lokasyon — Mersin, Yenişehir, “ünlü / en yakın” niyeti
 • HU | Sipariş — tantuni sipariş, telefon niyeti; call extension zorunlu
 • HU | Geniş — sadece düşük teklif + sıkı negatif kelime listesi
@@ -55,7 +57,8 @@ diyet, kalori, wikipedia, oyun
 ------------
 • Call: 0324 326 55 66
 • Location: Google Business Profile ile eşleşmeli (adres site ile birebir)
-• Sitelink: Menü (#menu), Konum (#konum), Sipariş (#iletisim), SSS (#sss)
+• Sitelink: Menü (/#menu), Konum (/#konum), Sipariş (/#iletisim), SSS (/#sss)
+  Ürün: Biftek (/biftek-tantuni/), Et (/et-tantuni/), Tavuk (/tavuk-tantuni/)
 • Callout: Kapıda kredi kartı · WhatsApp sipariş · Yoğurtlu tantuni · Biftek tantuni
 
 6) GEO / LLM (Generative Engine Optimization)

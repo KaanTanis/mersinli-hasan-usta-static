@@ -175,7 +175,7 @@
   </script>
 
   <link rel="preload" as="image" type="image/webp" href="assets/hero-640.webp" fetchpriority="high"
-    imagesrcset="assets/hero-640.webp 640w, assets/hero-960.webp 960w, assets/hero-1280.webp 1280w"
+    imagesrcset="assets/hero-640.webp 640w, assets/hero-960.webp 800w, assets/hero-1280.webp 1100w"
     imagesizes="(max-width:560px) 100vw, (max-width:1120px) 100vw, 50vw" />
 
   <script>
@@ -243,8 +243,8 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    #menu, #konum, #iletisim, #sss, #anasayfa { scroll-margin-top: 110px; }
+    html { scroll-behavior: auto; }
+    #menu, #konum, #contact, #iletisim, #cta, #sss, #anasayfa, #yogurtlu-tantuni, #et-tantuni, #biftek-tantuni, #tavuk-tantuni, #tatli { scroll-margin-top: 110px; }
     body {
       margin: 0;
       color: var(--ink);
@@ -490,6 +490,8 @@
     .btn-light { background: #fff; color: var(--ink); }
     .btn-ghost { background: transparent; color: var(--ink); border-color: rgba(15,16,16,.16); }
     .btn-ghost:hover { border-color: rgba(15,16,16,.4); background: rgba(15,16,16,.04); }
+    .btn-wa { background: #1daa69; color: #fff; }
+    .btn-wa:hover { background: #17965d; }
 
     .hero-note {
       margin-top: 24px;
@@ -549,11 +551,6 @@
     }
     .quick-nav a:hover { background: rgba(255,255,255,.13); }
 
-    .section--below-fold {
-      content-visibility: auto;
-      contain-intrinsic-size: auto 900px;
-    }
-
     .menu-section {
       background:
         radial-gradient(ellipse 85% 55% at 8% 0%, rgba(226,31,47,.08), transparent 52%),
@@ -598,6 +595,8 @@
         inset 0 1px 0 rgba(255,255,255,.92);
     }
     .filter {
+      display: inline-flex;
+      align-items: center;
       padding: 11px 15px;
       border-radius: 999px;
       background: rgba(255,255,255,.42);
@@ -797,7 +796,7 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .location-card h3 {
+    .location-card h2 {
       margin: 16px 0 14px;
       font: 700 38px/.98 "Space Grotesk", sans-serif;
       letter-spacing: -.05em;
@@ -916,7 +915,7 @@
     footer {
       background: var(--ink);
       color: #fff;
-      padding: 36px 0 92px;
+      padding: 36px 0 120px;
     }
     .footer-grid {
       display: grid;
@@ -954,12 +953,13 @@
 
     .mobile-bar {
       position: fixed;
-      left: 10px;
-      right: 10px;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: calc(10px + env(safe-area-inset-bottom, 0px));
       z-index: 40;
-      display: none;
-      grid-template-columns: 1fr 1fr;
+      display: grid;
+      width: min(520px, calc(100% - 20px));
+      grid-template-columns: 0.72fr 1.28fr;
       gap: 8px;
       padding: 7px;
       border-radius: 20px;
@@ -972,10 +972,13 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 46px;
+      min-height: 48px;
       border-radius: 14px;
-      font-size: 12px;
+      padding: 8px 10px;
+      font-size: 14px;
       font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
     }
     .mobile-call { background: #fff; color: var(--ink); }
     .mobile-wa { background: var(--green); color: #fff; }
@@ -984,7 +987,7 @@
       position: fixed;
       left: 12px;
       right: 12px;
-      bottom: 12px;
+      bottom: calc(86px + env(safe-area-inset-bottom, 0px));
       z-index: 90;
       width: min(640px, calc(100% - 24px));
       margin-inline: auto;
@@ -1063,20 +1066,47 @@
     .policy p, .policy li { color: #616161; line-height: 1.7; font-size: 13px; }
     .policy ul { padding-left: 18px; }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.is-visible { opacity: 1; transform: none; }
-    /* LCP: hero must paint immediately — do not wait for JS */
-    .hero .reveal {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
     .hidden { display: none !important; }
+
+    .menu-lead, .menu-group { margin-bottom: 42px; }
+    .menu-lead h2, .menu-group h2 {
+      margin: 0 0 10px;
+      font: 700 clamp(28px, 4vw, 44px)/1.05 "Space Grotesk", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .menu-lead p, .menu-group p {
+      margin: 0 0 18px;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .menu-group p a { color: var(--red-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+    html:has(#et-tantuni:target) .menu-group:not(#et-tantuni),
+    html:has(#biftek-tantuni:target) .menu-group:not(#biftek-tantuni),
+    html:has(#tavuk-tantuni:target) .menu-group:not(#tavuk-tantuni),
+    html:has(#tatli:target) .menu-group:not(#tatli),
+    html:has(.menu-group:target) #yogurtlu-tantuni {
+      display: none;
+    }
+    html:has(#et-tantuni:target) a.filter[data-filter="all"],
+    html:has(#biftek-tantuni:target) a.filter[data-filter="all"],
+    html:has(#tavuk-tantuni:target) a.filter[data-filter="all"],
+    html:has(#tatli:target) a.filter[data-filter="all"] {
+      background: rgba(255,255,255,.42);
+      color: #565656;
+      border-color: rgba(255,255,255,.58);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
+    }
+    html:has(#et-tantuni:target) a.filter[data-filter="et"],
+    html:has(#biftek-tantuni:target) a.filter[data-filter="biftek"],
+    html:has(#tavuk-tantuni:target) a.filter[data-filter="tavuk"],
+    html:has(#tatli:target) a.filter[data-filter="tatli"] {
+      background: rgba(15,16,16,.82);
+      color: #fff;
+      border-color: rgba(255,255,255,.14);
+      box-shadow: 0 10px 28px rgba(15,16,16,.18), inset 0 1px 0 rgba(255,255,255,.12);
+    }
 
     @media (max-width: 1120px) {
       .hero { grid-template-columns: 1fr; }
@@ -1187,7 +1217,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#anasayfa" aria-label="Mersinli Hasan Usta Tantuni">
-        <img src="assets/logo-320.png" srcset="assets/logo-320.png 320w, assets/logo.png 640w" sizes="142px" width="320" height="108" alt="Hasan Usta - logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
+        <img src="assets/logo-320.webp" width="320" height="108" alt="Hasan Usta" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
         <span class="brand-fallback" style="display:none; font:700 22px/1 'Space Grotesk',sans-serif;">Hasan Usta <span style="color:#e21f2f;margin-left:4px;">TANTUNİ</span></span>
       </a>
 
@@ -1217,8 +1247,9 @@
         <p class="hero-sub">Yoğurtlu tantuni, biftek tantuni ve klasik et tantuni — Mersin'in ünlü tantunisi. Yerinde servis veya <strong>tantuni sipariş</strong> için hemen arayın: <a href="tel:+903243265566">0324 326 55 66</a>.</p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#menu">Menüyü Gör <span aria-hidden="true">↓</span></a>
-          <a class="btn btn-ghost" href="tel:+903243265566">Telefon Siparişi</a>
+          <a class="btn btn-primary" href="tel:+903243265566">Ara</a>
+          <a class="btn btn-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">WhatsApp'tan Sipariş</a>
+          <a class="btn btn-ghost" href="#menu">Menüyü Gör <span aria-hidden="true">↓</span></a>
         </div>
 
         <div class="hero-note">
@@ -1228,44 +1259,53 @@
       </div>
 
       <div class="hero-visual reveal">
-        <img src="assets/hero-640.webp" srcset="assets/hero-640.webp 640w, assets/hero-960.webp 960w, assets/hero-1280.webp 1280w" sizes="(max-width:560px) 100vw, (max-width:1120px) 100vw, 50vw" alt="Mersinli Hasan Usta Tantuni şubesi" fetchpriority="high" decoding="sync" width="1600" height="1067" />
+        <img src="assets/hero-640.webp" srcset="assets/hero-640.webp 640w, assets/hero-960.webp 800w, assets/hero-1280.webp 1100w" sizes="(max-width:768px) 100vw, 50vw" alt="Mersinli Hasan Usta Tantuni şubesi" fetchpriority="high" decoding="async" width="800" height="534" />
       </div>
     </section>
 
     <nav class="quick-nav" aria-label="Hızlı menü">
       <div class="container quick-nav-inner">
         <a href="#menu">Hepsi <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        <a href="#menu" data-quick="et">Et Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        <a href="#menu" data-quick="biftek">Biftek Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        <a href="#menu" data-quick="tavuk">Tavuk Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        <a href="#menu" data-quick="tatli">Tatlılar <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="/et-tantuni/">Et Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="/biftek-tantuni/">Biftek Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="/tavuk-tantuni/">Tavuk Tantuni <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="#tatli">Tatlılar <span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5L17.5 17.5M17.5 17.5H9.5M17.5 17.5V9.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </nav>
 
     <section class="section section--below-fold menu-section" id="menu">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div>
             <span class="eyebrow">Menümüz</span>
-            <h2>Canın hangisini çektiyse.</h2>
+            <h2>Mersin Tantuni Menüsü</h2>
           </div>
-          <p>Et, biftek, tavuk ve tatlı seçeneklerini tek bakışta keşfet. Güncel fiyatlar aşağıdaki menüde yer alıyor.</p>
+          <p>Et tantuni, biftek tantuni ve tavuk tantuni. Yenişehir Hasan Usta'da lavaş, açık ekmek, sütlü somun ve yoğurtlu seçeneklerin güncel fiyatları burada.</p>
         </div>
 
-        <div class="menu-topline reveal">
+        <div class="menu-topline">
           <div class="label">Ürünleri kategoriye göre filtreleyin</div>
           <div class="filters" role="tablist" aria-label="Menü kategorileri">
-            <button class="filter active" data-filter="all" role="tab" aria-selected="true">Hepsi</button>
-            <button class="filter" data-filter="et" role="tab" aria-selected="false">Et Tantuni</button>
-            <button class="filter" data-filter="biftek" role="tab" aria-selected="false">Biftek Tantuni</button>
-            <button class="filter" data-filter="tavuk" role="tab" aria-selected="false">Tavuk Tantuni</button>
-            <button class="filter" data-filter="tatli" role="tab" aria-selected="false">Tatlılar</button>
+            <a class="filter active" href="#menu" data-filter="all" role="tab" aria-selected="true">Hepsi</a>
+            <a class="filter" href="#et-tantuni" data-filter="et" role="tab" aria-selected="false">Et Tantuni</a>
+            <a class="filter" href="#biftek-tantuni" data-filter="biftek" role="tab" aria-selected="false">Biftek Tantuni</a>
+            <a class="filter" href="#tavuk-tantuni" data-filter="tavuk" role="tab" aria-selected="false">Tavuk Tantuni</a>
+            <a class="filter" href="#tatli" data-filter="tatli" role="tab" aria-selected="false">Tatlılar</a>
           </div>
         </div>
 
-        <div class="products" id="products">
-          <article class="product reveal" data-category="et">
-            <div class="product-media"><img src="assets/product-et-lavas-480.webp" srcset="assets/product-et-lavas-480.webp 480w, assets/product-et-lavas.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Lavaş Ekmek" /></div>
+        <div id="products">
+          <div class="menu-lead" id="yogurtlu-tantuni">
+            <h2>Yoğurtlu Tantuni Mersin</h2>
+            <p>Yoğurtlu tantuni Mersin'de Hasan Usta'da et, biftek ve tavuk olarak hazırlanır. Lavaş veya ekmek yerine yoğurtlu seçeneği her grupta ayrı fiyatlanır. Sipariş hattı <a href="tel:+903243265566">0324 326 55 66</a>.</p>
+          </div>
+
+          <div class="menu-group" id="et-tantuni" data-category="et">
+            <h2>Et Tantuni Mersin</h2>
+            <p>Et tantuni Mersin'in klasik sac lezzeti. Hasan Usta Yenişehir'de lavaş, açık ekmek, sütlü somun ve yoğurtlu et tantuni sipariş edebilirsiniz. Ayrı sayfa: <a href="/et-tantuni/">Et Tantuni Mersin</a>.</p>
+            <div class="products">
+          <article class="product" data-category="et">
+            <div class="product-media"><img src="assets/product-et-lavas-480.webp" srcset="assets/product-et-lavas-480.webp 480w, assets/product-et-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Lavaş Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Lavaş Ekmek</h3>
@@ -1274,7 +1314,7 @@
           </article>
 
           <article class="product reveal" data-category="et">
-            <div class="product-media"><img src="assets/product-et-acik-480.webp" srcset="assets/product-et-acik-480.webp 480w, assets/product-et-acik.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Açık Ekmek" /></div>
+            <div class="product-media"><img src="assets/product-et-acik-480.webp" srcset="assets/product-et-acik-480.webp 480w, assets/product-et-acik.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Açık Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Açık Ekmek</h3>
@@ -1283,7 +1323,7 @@
           </article>
 
           <article class="product reveal" data-category="et">
-            <div class="product-media"><img src="assets/product-et-sutlu-somun-480.webp" srcset="assets/product-et-sutlu-somun-480.webp 480w, assets/product-et-sutlu-somun.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Sütlü Somun" /></div>
+            <div class="product-media"><img src="assets/product-et-sutlu-somun-480.webp" srcset="assets/product-et-sutlu-somun-480.webp 480w, assets/product-et-sutlu-somun.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Sütlü Somun" /></div>
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Sütlü Somun</h3>
@@ -1292,16 +1332,22 @@
           </article>
 
           <article class="product reveal" data-category="et">
-            <div class="product-media"><img src="assets/product-et-yogurtlu-480.webp" srcset="assets/product-et-yogurtlu-480.webp 480w, assets/product-et-yogurtlu.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Yoğurtlu" /></div>
+            <div class="product-media"><img src="assets/product-et-yogurtlu-480.webp" srcset="assets/product-et-yogurtlu-480.webp 480w, assets/product-et-yogurtlu.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Et Tantuni - Yoğurtlu" /></div>
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Yoğurtlu</h3>
               <div class="product-foot"><span class="price">210₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
+            </div>
+          </div>
 
-          <article class="product reveal" data-category="biftek">
-            <div class="product-media"><img src="assets/product-biftek-lavas-480.webp" srcset="assets/product-biftek-lavas-480.webp 480w, assets/product-biftek-lavas.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Lavaş Ekmek" /></div>
+          <div class="menu-group" id="biftek-tantuni" data-category="biftek">
+            <h2>Biftek Tantuni Mersin</h2>
+            <p>Biftek tantuni Mersin'de Hasan Usta Yenişehir şubesinde lavaş, açık ekmek, sütlü somun ve yoğurtlu seçenekleriyle sunulur. Telefon: <a href="tel:+903243265566">0324 326 55 66</a>. Ayrı sayfa: <a href="/biftek-tantuni/">Biftek Tantuni Mersin</a>.</p>
+            <div class="products">
+          <article class="product" data-category="biftek">
+            <div class="product-media"><img src="assets/product-biftek-lavas-480.webp" srcset="assets/product-biftek-lavas-480.webp 480w, assets/product-biftek-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Lavaş Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Lavaş Ekmek</h3>
@@ -1310,7 +1356,7 @@
           </article>
 
           <article class="product reveal" data-category="biftek">
-            <div class="product-media"><img src="assets/product-biftek-acik-480.webp" srcset="assets/product-biftek-acik-480.webp 480w, assets/product-biftek-acik.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Açık Ekmek" /></div>
+            <div class="product-media"><img src="assets/product-biftek-acik-480.webp" srcset="assets/product-biftek-acik-480.webp 480w, assets/product-biftek-acik.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Açık Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Açık Ekmek</h3>
@@ -1319,7 +1365,7 @@
           </article>
 
           <article class="product reveal" data-category="biftek">
-            <div class="product-media"><img src="assets/product-biftek-sutlu-somun-480.webp" srcset="assets/product-biftek-sutlu-somun-480.webp 480w, assets/product-biftek-sutlu-somun.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Sütlü Somun" /></div>
+            <div class="product-media"><img src="assets/product-biftek-sutlu-somun-480.webp" srcset="assets/product-biftek-sutlu-somun-480.webp 480w, assets/product-biftek-sutlu-somun.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Sütlü Somun" /></div>
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Sütlü Somun</h3>
@@ -1328,16 +1374,22 @@
           </article>
 
           <article class="product reveal" data-category="biftek">
-            <div class="product-media"><img src="assets/product-biftek-yogurtlu-480.webp" srcset="assets/product-biftek-yogurtlu-480.webp 480w, assets/product-biftek-yogurtlu.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Yoğurtlu" /></div>
+            <div class="product-media"><img src="assets/product-biftek-yogurtlu-480.webp" srcset="assets/product-biftek-yogurtlu-480.webp 480w, assets/product-biftek-yogurtlu.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Biftek Tantuni - Yoğurtlu" /></div>
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Yoğurtlu</h3>
               <div class="product-foot"><span class="price">230₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
+            </div>
+          </div>
 
-          <article class="product reveal" data-category="tavuk">
-            <div class="product-media"><img src="assets/product-tavuk-lavas-480.webp" srcset="assets/product-tavuk-lavas-480.webp 480w, assets/product-tavuk-lavas.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Lavaş Ekmek" /></div>
+          <div class="menu-group" id="tavuk-tantuni" data-category="tavuk">
+            <h2>Tavuk Tantuni Mersin</h2>
+            <p>Tavuk tantuni Mersin menümüzde lavaş, açık ekmek, sütlü somun ve yoğurtlu olarak var. Hasan Usta Yenişehir'den yerinde veya telefonla sipariş: <a href="tel:+903243265566">0324 326 55 66</a>. Ayrı sayfa: <a href="/tavuk-tantuni/">Tavuk Tantuni Mersin</a>.</p>
+            <div class="products">
+          <article class="product" data-category="tavuk">
+            <div class="product-media"><img src="assets/product-tavuk-lavas-480.webp" srcset="assets/product-tavuk-lavas-480.webp 480w, assets/product-tavuk-lavas.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Lavaş Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Lavaş Ekmek</h3>
@@ -1346,7 +1398,7 @@
           </article>
 
           <article class="product reveal" data-category="tavuk">
-            <div class="product-media"><img src="assets/product-tavuk-acik-480.webp" srcset="assets/product-tavuk-acik-480.webp 480w, assets/product-tavuk-acik.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Açık Ekmek" /></div>
+            <div class="product-media"><img src="assets/product-tavuk-acik-480.webp" srcset="assets/product-tavuk-acik-480.webp 480w, assets/product-tavuk-acik.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Açık Ekmek" /></div>
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Açık Ekmek</h3>
@@ -1355,7 +1407,7 @@
           </article>
 
           <article class="product reveal" data-category="tavuk">
-            <div class="product-media"><img src="assets/product-tavuk-sutlu-somun-480.webp" srcset="assets/product-tavuk-sutlu-somun-480.webp 480w, assets/product-tavuk-sutlu-somun.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Sütlü Somun" /></div>
+            <div class="product-media"><img src="assets/product-tavuk-sutlu-somun-480.webp" srcset="assets/product-tavuk-sutlu-somun-480.webp 480w, assets/product-tavuk-sutlu-somun.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Sütlü Somun" /></div>
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Sütlü Somun</h3>
@@ -1364,22 +1416,30 @@
           </article>
 
           <article class="product reveal" data-category="tavuk">
-            <div class="product-media"><img src="assets/product-tavuk-yogurtlu-480.webp" srcset="assets/product-tavuk-yogurtlu-480.webp 480w, assets/product-tavuk-yogurtlu.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Yoğurtlu" /></div>
+            <div class="product-media"><img src="assets/product-tavuk-yogurtlu-480.webp" srcset="assets/product-tavuk-yogurtlu-480.webp 480w, assets/product-tavuk-yogurtlu.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Tavuk Tantuni - Yoğurtlu" /></div>
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Yoğurtlu</h3>
               <div class="product-foot"><span class="price">160₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
+            </div>
+          </div>
 
-          <article class="product reveal" data-category="tatli">
-            <div class="product-media"><img src="assets/product-kunefe-480.webp" srcset="assets/product-kunefe-480.webp 480w, assets/product-kunefe.webp 960w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Künefe" /></div>
+          <div class="menu-group" id="tatli" data-category="tatli">
+            <h2>Tatlı — Künefe</h2>
+            <p>Tantuni siparişinize künefe ekleyebilirsiniz. Güncel fiyat aşağıda.</p>
+            <div class="products">
+          <article class="product" data-category="tatli">
+            <div class="product-media"><img src="assets/product-kunefe-480.webp" srcset="assets/product-kunefe-480.webp 480w, assets/product-kunefe.webp 720w" sizes="(max-width:560px) 92vw, (max-width:860px) 44vw, 280px" width="480" height="320" loading="lazy" decoding="async" alt="Künefe" /></div>
             <div class="product-body">
               <div class="product-cat">Tatlılar</div>
               <h3 class="product-name">Künefe</h3>
               <div class="product-foot"><span class="price">190₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Künefe sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1431,13 +1491,13 @@
       </div>
     </section>
 
-    <section class="section section--below-fold location" id="konum">
-      <div class="container">
+    <section class="section location" id="konum">
+      <div class="container" id="contact">
         <div class="location-grid">
-          <div class="location-card reveal">
+          <div class="location-card">
             <div>
               <span class="eyebrow">Konumumuz</span>
-              <h3>Mersin Yenişehir<br>tantuni adresimiz.</h3>
+              <h2>Mersin Yenişehir<br>tantuni adresimiz.</h2>
               <p>Hürriyet Mahallesi İsmet İnönü Bulvarı No:4/A, 33120 Yenişehir / MERSİN. Mersin merkez ve Yenişehir için <strong>en yakın tantunici</strong> arayan misafirlerimizi bekliyoruz.</p>
             </div>
             <div class="contact-stack">
@@ -1492,7 +1552,7 @@
           </details>
           <details class="faq-item">
             <summary>Yoğurtlu tantuni ve biftek tantuni var mı?</summary>
-            <p>Evet. Et, biftek ve tavuk tantunide yoğurtlu seçenek bulunuyor. Güncel çeşitleri ve fiyatları <a href="#menu">menüde</a> görebilirsiniz.</p>
+            <p>Evet. Et, biftek ve tavuk tantunide yoğurtlu seçenek bulunuyor. Fiyatlar <a href="/et-tantuni/">et tantuni</a>, <a href="/biftek-tantuni/">biftek tantuni</a> ve <a href="/tavuk-tantuni/">tavuk tantuni</a> sayfalarında.</p>
           </details>
           <details class="faq-item">
             <summary>Mersin Yenişehir'de Hasan Usta Tantuni nerede?</summary>
@@ -1507,7 +1567,7 @@
     </section>
 
     <section class="cta" id="iletisim">
-      <div class="container">
+      <div class="container" id="cta">
         <div class="cta-card reveal">
           <span class="eyebrow">İletişim</span>
           <h2>Acıktıysan,<br>fazla düşünme.</h2>
@@ -1532,10 +1592,10 @@
         <div class="footer-col">
           <div class="footer-title">Menü</div>
           <a href="#menu">Hepsi</a>
-          <a href="#menu" data-quick="et">Et Tantuni</a>
-          <a href="#menu" data-quick="biftek">Biftek Tantuni</a>
-          <a href="#menu" data-quick="tavuk">Tavuk Tantuni</a>
-          <a href="#menu" data-quick="tatli">Tatlılar</a>
+          <a href="/et-tantuni/">Et Tantuni</a>
+          <a href="/biftek-tantuni/">Biftek Tantuni</a>
+          <a href="/tavuk-tantuni/">Tavuk Tantuni</a>
+          <a href="#tatli">Tatlılar</a>
         </div>
 
         <div class="footer-col">
@@ -1555,8 +1615,8 @@
   </footer>
 
   <div class="mobile-bar">
-    <a class="mobile-call" href="tel:+903243265566">☎ Telefon Siparişi</a>
-    <a class="mobile-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">W WhatsApp</a>
+    <a class="mobile-call" href="tel:+903243265566">Ara</a>
+    <a class="mobile-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">WhatsApp'tan Sipariş</a>
   </div>
 
   <div class="cookie" id="cookie" role="dialog" aria-label="Çerez bildirimi">
@@ -1634,6 +1694,7 @@
 
       const filters = [...document.querySelectorAll('.filter')];
       const products = [...document.querySelectorAll('.product')];
+      const groups = [...document.querySelectorAll('.menu-group')];
 
       const applyFilter = (filter) => {
         filters.forEach((button) => {
@@ -1646,53 +1707,50 @@
           const show = filter === 'all' || product.dataset.category === filter;
           product.classList.toggle('hidden', !show);
         });
+
+        groups.forEach((group) => {
+          const show = filter === 'all' || group.dataset.category === filter;
+          group.classList.toggle('hidden', !show);
+        });
+
+        document.getElementById('yogurtlu-tantuni')?.classList.toggle('hidden', filter !== 'all');
       };
 
-      filters.forEach((button) => {
-        button.addEventListener('click', () => {
-          applyFilter(button.dataset.filter);
-        });
-      });
-
-      document.querySelectorAll('[data-quick]').forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          applyFilter(link.dataset.quick);
-          document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-      });
-
       const hashFilters = {
+        menu: 'all',
         'et-tantuni': 'et',
+        et: 'et',
         'biftek-tantuni': 'biftek',
-        'tavuk-tantuni': 'tavuk'
+        biftek: 'biftek',
+        'tavuk-tantuni': 'tavuk',
+        tavuk: 'tavuk',
+        tatli: 'tatli',
+        tatlilar: 'tatli'
       };
 
       const applyHash = () => {
         const key = decodeURIComponent(location.hash.replace(/^#/, '')).toLowerCase();
+        const anchorOnly = ['konum', 'contact', 'iletisim', 'cta', 'sss', 'anasayfa'];
+        if (anchorOnly.includes(key)) {
+          document.getElementById(key)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+          return;
+        }
+        if (!key || key === 'yogurtlu-tantuni') {
+          applyFilter('all');
+          if (key === 'yogurtlu-tantuni') {
+            document.getElementById(key)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
+          return;
+        }
         const filter = hashFilters[key];
         if (!filter) return;
         applyFilter(filter);
-        document.getElementById('menu')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+        const targetId = key === 'menu' ? 'menu' : key;
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'auto', block: 'start' });
       };
 
       applyHash();
       window.addEventListener('hashchange', applyHash);
-
-      const revealEls = document.querySelectorAll('.reveal');
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealEls.forEach((el, index) => {
-        el.style.transitionDelay = `${Math.min(index * 18, 120)}ms`;
-        revealObserver.observe(el);
-      });
 
       const cookie = document.getElementById('cookie');
       const policyOverlay = document.getElementById('policyOverlay');
@@ -1713,27 +1771,15 @@
         document.body.classList.remove('lock');
       };
 
-      const placeCookie = () => {
-        const bar = document.querySelector('.mobile-bar');
-        if (!cookie || !bar || getComputedStyle(bar).display === 'none') {
-          if (cookie) cookie.style.bottom = '';
-          return;
-        }
-        const dockTop = window.innerHeight - bar.getBoundingClientRect().top;
-        cookie.style.bottom = `${Math.ceil(dockTop + 12)}px`;
-      };
-
       if (!localStorage.getItem('hasanUstaCookies') && cookie) {
         let cookieShown = false;
         const revealCookie = () => {
           if (cookieShown || window.scrollY < 420) return;
           cookieShown = true;
-          placeCookie();
           cookie.classList.add('show');
           window.removeEventListener('scroll', revealCookie);
         };
         window.addEventListener('scroll', revealCookie, { passive: true });
-        window.addEventListener('resize', placeCookie);
         revealCookie();
       }
 

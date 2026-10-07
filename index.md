@@ -12,6 +12,11 @@ Mersin Yenişehir'de tantuni restoranı. Resmi web: https://www.mersinlihasanust
 
 Et, biftek ve tavuk tantuni; lavaş, açık ekmek, sütlü somun, yoğurtlu seçenekler. Güncel fiyatlar HTML menüde: https://www.mersinlihasanustatantuni.com/#menu
 
+- Et tantuni: https://www.mersinlihasanustatantuni.com/et-tantuni/
+- Biftek tantuni: https://www.mersinlihasanustatantuni.com/biftek-tantuni/
+- Tavuk tantuni: https://www.mersinlihasanustatantuni.com/tavuk-tantuni/
+- Yoğurtlu tantuni: https://www.mersinlihasanustatantuni.com/#yogurtlu-tantuni
+
 Öne çıkanlar: yoğurtlu tantuni, biftek tantuni, et tantuni, künefe.
 
 ## Sık sorulanlar

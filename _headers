@@ -31,3 +31,12 @@
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/et-tantuni/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/biftek-tantuni/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/tavuk-tantuni/
+  Cache-Control: public, max-age=0, must-revalidate
