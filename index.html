@@ -328,6 +328,9 @@
       background: rgba(247, 245, 240, .96);
       border-bottom: 1px solid rgba(15,16,16,.08);
     }
+    header .nav {
+      position: relative;
+    }
     @media (min-width: 861px) {
       header {
         background: rgba(247, 245, 240, .84);
@@ -423,6 +426,8 @@
       height: 44px;
       border-radius: 12px;
       cursor: pointer;
+      z-index: 2;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .hero {
@@ -709,6 +714,14 @@
       gap: 18px;
       margin-top: 22px;
     }
+    .feature-wrap--split {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 861px) {
+      .feature-wrap--split {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      }
+    }
     .feature-card {
       background: var(--ink);
       color: #fff;
@@ -717,6 +730,18 @@
       position: relative;
       overflow: hidden;
       min-height: 260px;
+    }
+    .feature-card--phone {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .feature-card--phone p {
+      max-width: none;
+      flex: 1;
+    }
+    .feature-card__action {
+      margin-top: 22px;
     }
     .feature-card--light {
       background: #f4f1ea;
@@ -1054,15 +1079,25 @@
     }
 
     @media (max-width: 860px) {
-      .nav { grid-template-columns: auto auto; justify-content: space-between; }
+      .nav {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand { min-width: 0; }
       .nav-links, .nav-cta { display: none; }
-      .hamburger { display: inline-grid; place-items: center; }
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+        margin-left: auto;
+      }
       .nav-links.open {
         display: flex;
         position: absolute;
-        left: 18px;
-        right: 18px;
+        left: 0;
+        right: 0;
         top: calc(100% + 8px);
+        z-index: 120;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -1094,7 +1129,7 @@
       .hero-visual { min-height: 280px; }
       .products { grid-template-columns: 1fr; }
       .product-name { min-height: auto; }
-      .feature-card, .location-card { padding: 26px; border-radius: 26px; }
+      .feature-card, .location-card { padding: 26px; border-radius: 26px; min-height: auto; }
       .cta-card { padding: 40px 26px; border-radius: 28px; }
       .cta-card::before { top: 48px; right: -52px; font-size: 90px; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -1345,11 +1380,14 @@
           </article>
         </div>
 
-        <div class="feature-wrap" style="grid-template-columns:.85fr 1.15fr;">
-          <article class="feature-card feature-card--light reveal" style="background:#ece8df;">
+        <div class="feature-wrap feature-wrap--split">
+          <article class="feature-card feature-card--light feature-card--phone reveal" style="background:#ece8df;">
             <img class="feature-icon" src="assets/icon-phone.webp" alt="" width="106" height="105" loading="lazy" decoding="async" />
             <h3>Telefon Siparişi</h3>
             <p>Menüden seç, ara ve siparişini doğrudan oluştur. Gereksiz adım yok.</p>
+            <div class="feature-card__action">
+              <a class="btn btn-primary" href="tel:+903243265566">0324 326 55 66</a>
+            </div>
           </article>
           <article class="feature-card reveal" style="background:#161818;">
             <div class="eyebrow" style="color:rgba(255,255,255,.65);">Hasan Usta</div>
@@ -1539,16 +1577,30 @@
       const navLinks = document.getElementById('navLinks');
       const menuButton = document.getElementById('menuButton');
 
-      menuButton?.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        menuButton.setAttribute('aria-expanded', String(open));
+      const setNavOpen = (open) => {
+        navLinks?.classList.toggle('open', open);
+        menuButton?.setAttribute('aria-expanded', String(open));
+        menuButton?.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+        document.body.classList.toggle('lock', open);
+      };
+
+      menuButton?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setNavOpen(!navLinks?.classList.contains('open'));
       });
 
       navLinks?.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          menuButton.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!navLinks?.classList.contains('open')) return;
+        if (event.target.closest('#navLinks, #menuButton')) return;
+        setNavOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navLinks?.classList.contains('open')) setNavOpen(false);
       });
 
       const filters = [...document.querySelectorAll('.filter')];
