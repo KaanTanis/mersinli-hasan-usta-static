@@ -10,6 +10,8 @@ Eski site hâlâ yayındayken proje klasöründe:
 ./download-assets.sh
 ```
 
+Deploy sonrası **Cloudflare → Purge Cache → Purge Everything** (agresif edge cache; ayrıntı: `deploy/cloudflare-cache-rules.txt`).
+
 Ardından klasörün tamamını yeni sunucuya yükleyebilirsin:
 
 ```text
@@ -21,4 +23,4 @@ assets/
 
 ## Dış bağımlılıklar
 
-Google Fonts kaldırıldı; **DM Sans** ve **Space Grotesk** `assets/fonts/` altında self-host edilir (`assets/fonts.css`). Google Maps iframe ise harita işlevi nedeniyle harici olarak bırakıldı.
+Özel web fontu yok; metin **sistem font stack** ile render edilir. Ölçüm: yalnızca **Google Ads** (`gtag`, AW-17880368457); GTM ve GA4 yok. Google Maps iframe harita işlevi nedeniyle harici olarak bırakıldı.

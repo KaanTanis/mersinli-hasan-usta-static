@@ -202,28 +202,18 @@
       window.__hasanAnalyticsLoaded = true;
       var g = document.createElement('script');
       g.async = true;
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-YFZ44HDPE7';
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17880368457';
       g.onload = function () {
         gtag('js', new Date());
-        gtag('config', 'G-YFZ44HDPE7');
         gtag('config', 'AW-17880368457');
       };
       document.head.appendChild(g);
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s);
-        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-NVMLBDD9');
     };
   </script>
 
-  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="assets/fonts.css" />
-
   <style>
     :root {
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --ink: #0f1010;
       --muted: #5a5a5a;
       --cream: #f7f5f0;
@@ -247,7 +237,7 @@
       margin: 0;
       color: var(--ink);
       background: var(--cream);
-      font-family: "DM Sans", sans-serif;
+      font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -294,7 +284,7 @@
     }
     .section-head h2 {
       margin: 12px 0 0;
-      font: 700 clamp(38px, 5vw, 66px)/.95 "Space Grotesk", sans-serif;
+      font: 700 clamp(38px, 5vw, 66px)/.95 var(--font-sans);
       letter-spacing: -.055em;
       max-width: 760px;
     }
@@ -449,7 +439,7 @@
     .hero .eyebrow { color: var(--ink); }
     .hero h1 {
       margin: 22px 0 24px;
-      font: 700 clamp(48px, 11.5cqi, 86px)/.9 "Space Grotesk", sans-serif;
+      font: 700 clamp(48px, 11.5cqi, 86px)/.9 var(--font-sans);
       letter-spacing: -.06em;
     }
     .hero h1 em {
@@ -602,7 +592,7 @@
       backdrop-filter: blur(18px) saturate(1.25);
       border: 1px solid rgba(255,255,255,.58);
       color: #565656;
-      font: 700 12px "DM Sans", sans-serif;
+      font: 700 12px var(--font-sans);
       cursor: pointer;
       transition: all .2s ease;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
@@ -678,7 +668,7 @@
     .product-name {
       min-height: 48px;
       margin: 0;
-      font: 700 18px/1.18 "Space Grotesk", sans-serif;
+      font: 700 18px/1.18 var(--font-sans);
       letter-spacing: -.03em;
     }
     .product-foot {
@@ -690,7 +680,7 @@
       justify-content: space-between;
       gap: 10px;
     }
-    .price { font: 700 20px "Space Grotesk", sans-serif; }
+    .price { font: 700 20px var(--font-sans); }
     .order-mini {
       width: 38px;
       height: 38px;
@@ -744,7 +734,7 @@
     }
     .feature-card h3 {
       margin: 20px 0 9px;
-      font: 700 28px/1 "Space Grotesk", sans-serif;
+      font: 700 28px/1 var(--font-sans);
       letter-spacing: -.04em;
     }
     .feature-card p {
@@ -796,7 +786,7 @@
     }
     .location-card h2 {
       margin: 16px 0 14px;
-      font: 700 38px/.98 "Space Grotesk", sans-serif;
+      font: 700 38px/.98 var(--font-sans);
       letter-spacing: -.05em;
     }
     .location-card p {
@@ -850,7 +840,7 @@
     .map-placeholder strong {
       display: block;
       margin: 14px 0 8px;
-      font: 700 28px/.98 "Space Grotesk", sans-serif;
+      font: 700 28px/.98 var(--font-sans);
       letter-spacing: -.04em;
     }
     .map-placeholder p {
@@ -875,7 +865,7 @@
     .faq-item summary {
       cursor: pointer;
       list-style: none;
-      font: 700 17px/1.35 "Space Grotesk", sans-serif;
+      font: 700 17px/1.35 var(--font-sans);
       padding: 20px 0;
       display: flex;
       align-items: center;
@@ -916,7 +906,7 @@
       position: absolute;
       right: -16px;
       top: 20px;
-      font: 700 clamp(96px, 15vw, 210px)/1 "Space Grotesk", sans-serif;
+      font: 700 clamp(96px, 15vw, 210px)/1 var(--font-sans);
       letter-spacing: -.08em;
       color: rgba(255,255,255,.08);
       z-index: -1;
@@ -924,7 +914,7 @@
     .cta-card h2 {
       max-width: 760px;
       margin: 13px 0 16px;
-      font: 700 clamp(42px, 6vw, 82px)/.9 "Space Grotesk", sans-serif;
+      font: 700 clamp(42px, 6vw, 82px)/.9 var(--font-sans);
       letter-spacing: -.065em;
     }
     .cta-card p {
@@ -1080,12 +1070,12 @@
       gap: 16px;
       align-items: center;
     }
-    .policy h2 { margin: 0; font: 700 30px/.98 "Space Grotesk", sans-serif; letter-spacing: -.04em; }
+    .policy h2 { margin: 0; font: 700 30px/.98 var(--font-sans); letter-spacing: -.04em; }
     .close {
       width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
       background: #fff; cursor: pointer; font-size: 18px;
     }
-    .policy h3 { margin: 28px 0 10px; font: 700 18px "Space Grotesk", sans-serif; }
+    .policy h3 { margin: 28px 0 10px; font: 700 18px var(--font-sans); }
     .policy p, .policy li { color: #616161; line-height: 1.7; font-size: 13px; }
     .policy ul { padding-left: 18px; }
 
@@ -1094,7 +1084,7 @@
     .menu-group { margin-bottom: 42px; }
     .menu-group h2 {
       margin: 0 0 10px;
-      font: 700 clamp(28px, 4vw, 44px)/1.05 "Space Grotesk", sans-serif;
+      font: 700 clamp(28px, 4vw, 44px)/1.05 var(--font-sans);
       letter-spacing: -.045em;
     }
     .menu-group p {
@@ -1226,9 +1216,6 @@
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVMLBDD9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
   <div class="topbar">
     <span>Sipariş Hattı</span>
     <a href="tel:+903243265566">0324 326 55 66</a>
@@ -1240,7 +1227,7 @@
     <div class="container nav">
       <a class="brand" href="#anasayfa" aria-label="Mersinli Hasan Usta Tantuni">
         <img src="assets/logo-180.webp" width="180" height="61" alt="Hasan Usta" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-        <span class="brand-fallback" style="display:none; font:700 22px/1 'Space Grotesk',sans-serif;">Hasan Usta <span style="color:#e21f2f;margin-left:4px;">TANTUNİ</span></span>
+        <span class="brand-fallback" style="display:none; font:700 22px/1 var(--font-sans);">Hasan Usta <span style="color:#e21f2f;margin-left:4px;">TANTUNİ</span></span>
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Ana navigasyon">
@@ -1605,7 +1592,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div style="font:700 25px/1 'Space Grotesk',sans-serif;">Hasan Usta <span style="color:#ff4d59;">TANTUNİ</span></div>
+          <div style="font:700 25px/1 var(--font-sans);">Hasan Usta <span style="color:#ff4d59;">TANTUNİ</span></div>
           <p>Mersinli Hasan Usta Tantuni — Yenişehir / Mersin. Yoğurtlu tantuni, biftek tantuni, tantuni sipariş: 0324 326 55 66.</p>
         </div>
 

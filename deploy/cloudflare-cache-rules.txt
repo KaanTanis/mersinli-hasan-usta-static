@@ -1,127 +1,86 @@
-Cloudflare — basit cache rehberi (Cache Rules, güncel panel)
-Site: mersinlihasanustatantuni.com (statik HTML + /assets)
+Cloudflare — agresif cache (deploy sonrası Purge Everything)
+Site: mersinlihasanustatantuni.com
 
-Kaynak: https://developers.cloudflare.com/cache/how-to/cache-rules/
+Origin (nginx / _headers) özeti:
+  HTML / landing     → max-age=300, s-maxage=31536000  (edge 1 yıl, tarayıcı 5 dk)
+  /assets/*, görseller → max-age=31536000, immutable
 
-═══════════════════════════════════════════════════════════════
-ÖNCE ANLA: İKİ KATMAN
-═══════════════════════════════════════════════════════════════
-
-1) Origin (nginx) → Cache-Control header gönderir.
-2) Cloudflare edge → Bu header'lara göre (veya kurala göre) saklar.
-
-Sizin nginx conf zaten doğru:
-  index.html  → max-age=0, must-revalidate
-  /assets/*   → max-age=31536000, immutable
-
-Cloudflare'de çoğu iş için sadece 2 Cache Rule yeterli.
+Ölçüm (Google Ads gtag) edge cache’ten etkilenmez; tarayıcıda çalışır.
 
 ═══════════════════════════════════════════════════════════════
-PANEL YOLU (2026)
+DEPLOY RUTİNİ (zorunlu)
 ═══════════════════════════════════════════════════════════════
 
-Cache Rules:
-  Dashboard → Caching → Cache Rules → Create rule
-  (Doğrudan: https://dash.cloudflare.com → domain seç → Caching → Cache Rules)
+1) Dosyaları sunucuya yükle + nginx reload (conf değiştiyse)
+2) Cloudflare → Caching → Configuration → Purge Cache → Purge Everything
+3) curl ile doğrula (aşağıda)
 
-Genel cache ayarı:
-  Caching → Configuration → Caching level → Standard (Default)
-
-Deploy sonrası temizlik:
-  Caching → Purge Cache → Custom Purge → URL → https://www.mersinlihasanustatantuni.com/
-
-Geçici test (tüm site cache kapalı ~3 saat):
-  Caching → Configuration → Development Mode → On
-
-Not: Eski "Page Rules" yerine Cache Rules kullanın.
+Purge yapmadan deploy edersen ziyaretçiler edge’de eski HTML görebilir.
 
 ═══════════════════════════════════════════════════════════════
-KURAL 1 — Ana sayfa (HTML) cache'e girmesin
+PANEL: Cache Rules (önerilen — 2 kural)
 ═══════════════════════════════════════════════════════════════
 
-Rule name: Bypass HTML homepage
+Dashboard → domain → Caching → Cache Rules
 
-When incoming requests match:
-  Custom filter expression → Edit expression:
+───────────────────────────────────────────────────────────────
+KURAL 1 — Statik site: hepsi cache’lenebilir
+───────────────────────────────────────────────────────────────
 
-  (http.request.uri.path eq "/" or http.request.uri.path eq "/index.html")
+Rule name: Cache all static site
+
+When incoming requests match → Custom filter expression:
+
+  (http.host eq "www.mersinlihasanustatantuni.com" or http.host eq "mersinlihasanustatantuni.com")
 
 Then:
-  Cache eligibility → Bypass cache
+  Cache eligibility     → Eligible for cache
+  Edge TTL              → Respect origin Cache-Control (s-maxage / max-age)
+  Browser TTL           → Respect origin
+  Cache key             → Ignore query string   ← gclid/utm aynı HTML; hit oranı artar
 
-Place at: First (en üstte)
+Place at: First
 
-Deploy
+Not: “Ignore query string” yalnızca cache anahtarı içindir; URL’deki gclid tarayıcıda kalır, Ads attribution bozulmaz.
 
-Açıklama: Bypass cache seçince Cloudflare o isteği edge'de tutmaz;
-site güncellemesi hemen görünür (purge şart değil, yine de alışkanlık olarak purge edebilirsiniz).
+───────────────────────────────────────────────────────────────
+KURAL 2 (opsiyonel) — Origin 5xx / hata kısa TTL
+───────────────────────────────────────────────────────────────
 
-═══════════════════════════════════════════════════════════════
-KURAL 2 — /assets uzun süre edge'de kalsın
-═══════════════════════════════════════════════════════════════
-
-Rule name: Cache assets long
-
-When incoming requests match:
-  Custom filter expression:
-
-  starts_with(http.request.uri.path, "/assets/")
-
-Then:
-  Cache eligibility → Eligible for cache
-
-  Edge TTL →
-    "Use cache-control header if present, use default Cloudflare caching behavior if not"
-    (API adı: respect_origin — origin'deki 1 yıl header'ını kullanır)
-
-  Browser TTL → Respect origin
-
-Place at: Second
-
-Deploy
+Çoğu planda gerekmez. Cloudflare zaten hata cevaplarını uzun cache’lemez.
 
 ═══════════════════════════════════════════════════════════════
-OPSIYONEL KURAL 3 — robots / sitemap / llms
+Caching → Configuration
 ═══════════════════════════════════════════════════════════════
 
-Çoğu planda gerekmez; nginx zaten kısa TTL veriyor.
-İsterseniz:
+  Caching level        → Standard
+  Browser Cache TTL    → Respect Existing Headers
+  Crawler Hints        → Açık (SEO dosyaları için iyi)
 
-Expression:
-  (http.request.uri.path eq "/robots.txt" or http.request.uri.path eq "/sitemap.xml" or http.request.uri.path eq "/llms.txt")
-
-Then: Eligible for cache + Edge TTL respect origin
+Development Mode       → Sadece acil debug (~3 saat bypass); normalde kapalı
 
 ═══════════════════════════════════════════════════════════════
-CACHE RESPONSE RULES — ŞİMDİLİK DOKUNMAYIN
+ESKİ KURALLARI SİL
 ═══════════════════════════════════════════════════════════════
 
-Aynı sayfada "Cache Response Rules" sekmesi var (origin cevabından sonra
-Cache-Control değiştirmek için). Nginx header'ları doğruysa gerek yok.
-
-═══════════════════════════════════════════════════════════════
-HIZ (Speed) — AYRI MENÜ, CACHE RULE DEĞİL
-═══════════════════════════════════════════════════════════════
-
-Speed → Optimization (veya Settings → Speed)
-
-  • Brotli / sıkıştırma: planda varsayılan açık (Free: Zstandard, Pro+: Brotli)
-  • HTTP/3: Network veya Speed altında (zone ayarı)
-
-HTML'de inline CSS olduğu için Auto Minify HTML'i açmayın (eski özellikler
-kaldırıldıysa zaten yoktur; Compression Rules dokümanına bakın).
+“Bypass HTML homepage” gibi HTML’i bypass eden Page Rule / Cache Rule varsa kaldır;
+aksi halde agresif cache çalışmaz.
 
 ═══════════════════════════════════════════════════════════════
 TEST
 ═══════════════════════════════════════════════════════════════
 
+# Asset — birkaç istekten sonra HIT
 curl -sI "https://www.mersinlihasanustatantuni.com/assets/hero-640.webp" | tr -d '\r' | grep -iE 'cf-cache-status|cache-control'
 
-Beklenen asset: cf-cache-status HIT (birkaç istekten sonra), cache-control uzun.
+# Ana sayfa — purge sonrası MISS → tekrar istek HIT
+curl -sI "https://www.mersinlihasanustatantuni.com/" | tr -d '\r' | grep -iE 'cf-cache-status|cache-control|age'
 
-curl -sI "https://www.mersinlihasanustatantuni.com/" | tr -d '\r' | grep -iE 'cf-cache-status|cache-control'
+# Kategori
+curl -sI "https://www.mersinlihasanustatantuni.com/et-tantuni/" | tr -d '\r' | grep -iE 'cf-cache-status|cache-control'
 
-Beklenen ana sayfa: Bypass sonrası genelde DYNAMIC veya cache dışı davranış.
+Beklenen cache-control (origin):
+  s-maxage=31536000
+  cf-cache-status: HIT (warm cache)
 
-Sorun giderme: Cloudflare Trace (geliştirici araçları) veya
-developers.cloudflare.com/cache → troubleshooting
+Sorun: cf-cache-status DYNAMIC sürekli → Bypass kuralı veya “Cache Level: No Query String” eski Page Rule kontrol et.
