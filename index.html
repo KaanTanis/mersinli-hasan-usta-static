@@ -981,28 +981,39 @@
 
     .cookie {
       position: fixed;
-      inset: auto 18px 18px 18px;
-      z-index: 100;
-      max-width: 600px;
-      margin-left: auto;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 90;
+      width: min(640px, calc(100% - 24px));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       background: #fff;
       border: 1px solid var(--line);
-      box-shadow: 0 30px 100px rgba(0,0,0,.22);
-      border-radius: 24px;
-      padding: 20px;
-      transform: translateY(140%);
+      box-shadow: 0 10px 32px rgba(0,0,0,.14);
+      border-radius: 14px;
+      padding: 8px 8px 8px 14px;
+      transform: translateY(160%);
       transition: transform .35s cubic-bezier(.22,1,.36,1);
     }
     .cookie.show { transform: translateY(0); }
-    .cookie strong { display: block; font: 700 18px "Space Grotesk", sans-serif; }
-    .cookie p { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 8px 0 15px; }
-    .cookie-actions { display: flex; gap: 8px; }
+    .cookie p {
+      margin: 0;
+      flex: 1;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .cookie-actions { display: flex; gap: 6px; flex-shrink: 0; }
     .cookie-btn {
       border: 0;
       cursor: pointer;
-      min-height: 42px;
-      padding: 0 15px;
-      border-radius: 12px;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 10px;
       font-weight: 700;
       font-size: 12px;
     }
@@ -1126,6 +1137,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
       .mobile-bar { display: grid; }
+      .cookie { bottom: 76px; }
     }
 
     @media (max-width: 560px) {
@@ -1143,7 +1155,14 @@
       .cta-card::before { top: 48px; right: -52px; font-size: 90px; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
-      .cookie { inset: auto 10px 74px 10px; }
+      .cookie {
+        bottom: 74px;
+        flex-wrap: wrap;
+        padding: 8px 10px;
+        gap: 8px;
+      }
+      .cookie p { font-size: 12px; }
+      .cookie-actions { margin-left: auto; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1538,12 +1557,11 @@
     <a class="mobile-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">W WhatsApp</a>
   </div>
 
-  <div class="cookie" id="cookie">
-    <strong>Çerezler</strong>
-    <p>Bu web sitesi deneyiminizi geliştirmek için çerezler kullanır. Detaylar için çerez politikasını inceleyebilirsiniz.</p>
+  <div class="cookie" id="cookie" role="dialog" aria-label="Çerez bildirimi">
+    <p>Deneyimi iyileştirmek için çerez kullanıyoruz.</p>
     <div class="cookie-actions">
-      <button class="cookie-btn cookie-accept" id="acceptCookies">Kabul Et</button>
-      <button class="cookie-btn cookie-policy" id="cookiePolicy">Detaylar</button>
+      <button class="cookie-btn cookie-policy" id="cookiePolicy">Detay</button>
+      <button class="cookie-btn cookie-accept" id="acceptCookies">Kabul</button>
     </div>
   </div>
 
@@ -1676,8 +1694,16 @@
         document.body.classList.remove('lock');
       };
 
-      if (!localStorage.getItem('hasanUstaCookies')) {
-        setTimeout(() => cookie?.classList.add('show'), 900);
+      if (!localStorage.getItem('hasanUstaCookies') && cookie) {
+        let cookieShown = false;
+        const revealCookie = () => {
+          if (cookieShown || window.scrollY < 420) return;
+          cookieShown = true;
+          cookie.classList.add('show');
+          window.removeEventListener('scroll', revealCookie);
+        };
+        window.addEventListener('scroll', revealCookie, { passive: true });
+        revealCookie();
       }
 
       acceptCookies?.addEventListener('click', () => {
