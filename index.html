@@ -1011,6 +1011,17 @@
     .mobile-call { background: #fff; color: var(--ink); }
     .mobile-wa { background: var(--green); color: #fff; }
 
+    /* Geçici: WhatsApp butonları gizli — geri açmak için bu bloğu sil */
+    .topbar a[href*="wa.me"],
+    a.btn-wa,
+    a.mobile-wa,
+    a.contact-row[href*="wa.me"],
+    .cta-actions a[href*="wa.me"],
+    footer a[href*="wa.me"] {
+      display: none !important;
+    }
+    .mobile-bar { grid-template-columns: 1fr; }
+
     .cookie {
       position: fixed;
       left: 12px;

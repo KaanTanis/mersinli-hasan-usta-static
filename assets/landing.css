@@ -214,6 +214,15 @@ footer {
 .dock .call { background: #fff; color: var(--ink); }
 .dock .wa { background: var(--green); color: #fff; }
 
+/* Geçici: WhatsApp butonları gizli — geri açmak için bu bloğu sil */
+.topbar a[href*="wa.me"],
+a.btn-wa,
+a.wa,
+footer a[href*="wa.me"] {
+  display: none !important;
+}
+.dock { grid-template-columns: 1fr; }
+
 @media (max-width: 860px) {
   .products { grid-template-columns: 1fr 1fr; }
 }
