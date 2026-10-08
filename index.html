@@ -980,35 +980,40 @@
     }
 
     .mobile-bar {
+      display: none;
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
       bottom: calc(10px + env(safe-area-inset-bottom, 0px));
       z-index: 40;
-      display: grid;
-      width: min(520px, calc(100% - 20px));
-      grid-template-columns: 0.72fr 1.28fr;
-      gap: 8px;
-      padding: 7px;
-      border-radius: 20px;
-      background: rgba(15,16,16,.88);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.28);
+      width: min(420px, calc(100% - 24px));
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 14px 40px rgba(226,31,47,.14), 0 4px 16px rgba(15,16,16,.08);
     }
     .mobile-bar a {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 48px;
-      border-radius: 14px;
-      padding: 8px 10px;
-      font-size: 14px;
+      min-height: 50px;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 15px;
       font-weight: 700;
       line-height: 1.15;
       text-align: center;
+      letter-spacing: -.01em;
     }
-    .mobile-call { background: #fff; color: var(--ink); }
+    .mobile-call {
+      background: linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(226,31,47,.32);
+    }
+    .mobile-call:active { transform: scale(.98); }
     .mobile-wa { background: var(--green); color: #fff; }
 
     /* Geçici: WhatsApp butonları gizli — geri açmak için bu bloğu sil */
@@ -1020,7 +1025,6 @@
     footer a[href*="wa.me"] {
       display: none !important;
     }
-    .mobile-bar { grid-template-columns: 1fr; }
 
     .hidden { display: none !important; }
 
@@ -1123,7 +1127,8 @@
       .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
-      .mobile-bar { display: grid; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px)); }
     }
 
     @media (max-width: 560px) {
@@ -1557,7 +1562,7 @@
   </footer>
 
   <div class="mobile-bar">
-    <a class="mobile-call" href="tel:+903243265566">Ara</a>
+    <a class="mobile-call" href="tel:+903243265566">Ara · 0324 326 55 66</a>
     <a class="mobile-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">WhatsApp'tan Sipariş</a>
   </div>
 
