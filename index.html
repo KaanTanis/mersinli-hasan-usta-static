@@ -1022,89 +1022,6 @@
     }
     .mobile-bar { grid-template-columns: 1fr; }
 
-    .cookie {
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: calc(86px + env(safe-area-inset-bottom, 0px));
-      z-index: 90;
-      width: min(640px, calc(100% - 24px));
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 32px rgba(0,0,0,.14);
-      border-radius: 14px;
-      padding: 8px 8px 8px 14px;
-      transform: translateY(160%);
-      transition: transform .35s cubic-bezier(.22,1,.36,1);
-    }
-    .cookie.show { transform: translateY(0); }
-    .cookie.is-dismissed { display: none !important; }
-    .cookie p {
-      margin: 0;
-      flex: 1;
-      min-width: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-    .cookie-actions { display: flex; gap: 6px; flex-shrink: 0; }
-    .cookie-btn {
-      border: 0;
-      cursor: pointer;
-      min-height: 34px;
-      padding: 0 12px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 12px;
-    }
-    .cookie-accept { background: var(--ink); color: #fff; }
-    .cookie-policy { background: var(--cream); color: var(--ink); }
-
-    .policy-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 110;
-      display: none;
-      place-items: center;
-      padding: 20px;
-      background: rgba(15,16,16,.72);
-      backdrop-filter: blur(8px);
-    }
-    .policy-overlay.open { display: grid; }
-    .policy {
-      width: min(860px, 100%);
-      max-height: min(82vh, 760px);
-      overflow: auto;
-      background: #fff;
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 30px 100px rgba(0,0,0,.35);
-    }
-    .policy-head {
-      position: sticky;
-      top: -30px;
-      padding: 0 0 18px;
-      margin: 0 0 22px;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-    }
-    .policy h2 { margin: 0; font: 700 30px/.98 var(--font-sans); letter-spacing: -.04em; }
-    .close {
-      width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
-      background: #fff; cursor: pointer; font-size: 18px;
-    }
-    .policy h3 { margin: 28px 0 10px; font: 700 18px var(--font-sans); }
-    .policy p, .policy li { color: #616161; line-height: 1.7; font-size: 13px; }
-    .policy ul { padding-left: 18px; }
-
     .hidden { display: none !important; }
 
     .menu-group { margin-bottom: 42px; }
@@ -1207,7 +1124,6 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
       .mobile-bar { display: grid; }
-      .cookie { bottom: calc(108px + env(safe-area-inset-bottom, 0px)); z-index: 45; }
     }
 
     @media (max-width: 560px) {
@@ -1225,14 +1141,6 @@
       .cta-card::before { top: 48px; right: -52px; font-size: 90px; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
-      .cookie {
-        bottom: calc(108px + env(safe-area-inset-bottom, 0px));
-        flex-wrap: wrap;
-        padding: 8px 10px;
-        gap: 8px;
-      }
-      .cookie p { font-size: 12px; }
-      .cookie-actions { margin-left: auto; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1644,7 +1552,6 @@
 
       <div class="footer-bottom">
         <span>© <span id="year"></span> Mersinli Hasan Usta Tantuni. All rights reserved.</span>
-        <button class="cookie-btn" style="background:transparent;color:rgba(255,255,255,.78);padding:0;" id="openPolicy">Çerez Politikası</button>
       </div>
     </div>
   </footer>
@@ -1652,48 +1559,6 @@
   <div class="mobile-bar">
     <a class="mobile-call" href="tel:+903243265566">Ara</a>
     <a class="mobile-wa" href="https://wa.me/905054624595" target="_blank" rel="noopener">WhatsApp'tan Sipariş</a>
-  </div>
-
-  <div class="cookie" id="cookie" role="dialog" aria-label="Çerez bildirimi">
-    <p>Deneyimi iyileştirmek için çerez kullanıyoruz.</p>
-    <div class="cookie-actions">
-      <button class="cookie-btn cookie-policy" id="cookiePolicy">Detay</button>
-      <button class="cookie-btn cookie-accept" id="acceptCookies" type="button">Kabul</button>
-    </div>
-  </div>
-
-  <div class="policy-overlay" id="policyOverlay" aria-hidden="true">
-    <div class="policy" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
-      <div class="policy-head">
-        <h2 id="policyTitle">Çerez Politikası</h2>
-        <button class="close" id="closePolicy" aria-label="Kapat">×</button>
-      </div>
-
-      <p><strong>Yürürlük Tarihi:</strong> 07.04.2025<br><strong>Web Sitesi:</strong> mersinlihasanustatantuni.com<br><strong>Veri Sorumlusu:</strong> mersinlihasanustatantuni</p>
-
-      <h3>1. Çerez Nedir?</h3>
-      <p>Çerezler (cookies), ziyaret ettiğiniz web siteleri tarafından tarayıcınıza veya cihazınıza kaydedilen küçük metin dosyalarıdır. Bu dosyalar sayesinde site tercihlerinizi hatırlamamızı, kullanım deneyimini geliştirmemizi ve analiz verileri elde etmemizi sağlar.</p>
-
-      <h3>2. Hangi Tür Çerezleri Kullanıyoruz?</h3>
-      <ul>
-        <li><strong>Zorunlu Çerezler:</strong> Web sitemizin düzgün çalışması için gereklidir. Oturum yönetimi, güvenlik ve form işlemleri gibi temel işlevleri sağlar.</li>
-        <li><strong>İstatistik Çerezleri:</strong> Site trafiğini analiz etmek ve kullanıcıların nasıl etkileşimde bulunduğunu anlamak için kullanılır. Bu veriler anonimdir.</li>
-        <li><strong>Tercih Çerezleri:</strong> Kullanıcının dil seçimi gibi kişisel tercihlerini hatırlamamızı sağlar.</li>
-        <li><strong>Pazarlama Çerezleri:</strong> İzin vermeniz durumunda ilgi alanlarınıza uygun reklamlar sunmamıza yardımcı olur. Üçüncü taraf hizmet sağlayıcılar aracılığıyla çalışabilir.</li>
-      </ul>
-
-      <h3>3. Çerezleri Nasıl Kullanıyoruz?</h3>
-      <p>Çerezler sayesinde web sitesinin performansını artırıyor, kullanıcı deneyimini geliştiriyor, içerikleri kişiselleştiriyor ve ziyaretçi analizleri gerçekleştiriyoruz.</p>
-
-      <h3>4. Çerezleri Nasıl Kontrol Edebilirsiniz?</h3>
-      <p>Tarayıcı ayarlarınız üzerinden çerezlerin kullanımını kontrol edebilir veya tamamen engelleyebilirsiniz. Ancak bu durumda bazı site özellikleri düzgün çalışmayabilir. Chrome, Firefox, Safari ve Edge tarayıcılarının gizlilik/çerez ayarlarından kontrol sağlayabilirsiniz.</p>
-
-      <h3>5. Değişiklikler</h3>
-      <p>Bu Çerez Politikası gerektiğinde güncellenebilir. Güncel sürüm her zaman mersinlihasanustatantuni.com üzerinde yayınlanacaktır.</p>
-
-      <h3>6. İletişim</h3>
-      <p>Çerezler ve kişisel verilerle ilgili sorularınız için bizimle telefon veya WhatsApp üzerinden iletişime geçebilirsiniz.</p>
-    </div>
   </div>
 
   <script>
@@ -1790,55 +1655,6 @@
 
       applyHash();
       window.addEventListener('hashchange', applyHash);
-
-      const cookie = document.getElementById('cookie');
-      const policyOverlay = document.getElementById('policyOverlay');
-      const acceptCookies = document.getElementById('acceptCookies');
-      const openPolicy = document.getElementById('openPolicy');
-      const cookiePolicy = document.getElementById('cookiePolicy');
-      const closePolicy = document.getElementById('closePolicy');
-
-      const openPolicyModal = () => {
-        policyOverlay.classList.add('open');
-        policyOverlay.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('lock');
-      };
-
-      const closePolicyModal = () => {
-        policyOverlay.classList.remove('open');
-        policyOverlay.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('lock');
-      };
-
-      if (!localStorage.getItem('hasanUstaCookies') && cookie) {
-        let cookieShown = false;
-        const revealCookie = () => {
-          if (cookieShown || window.scrollY < 420) return;
-          cookieShown = true;
-          cookie.classList.add('show');
-          window.removeEventListener('scroll', revealCookie);
-        };
-        window.addEventListener('scroll', revealCookie, { passive: true });
-        revealCookie();
-      }
-
-      acceptCookies?.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        try { localStorage.setItem('hasanUstaCookies', '1'); } catch (_) {}
-        cookie?.classList.remove('show');
-        cookie?.classList.add('is-dismissed');
-      });
-      cookiePolicy?.addEventListener('click', openPolicyModal);
-      openPolicy?.addEventListener('click', openPolicyModal);
-      closePolicy?.addEventListener('click', closePolicyModal);
-      policyOverlay?.addEventListener('click', (event) => {
-        if (event.target === policyOverlay) closePolicyModal();
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closePolicyModal();
-      });
 
       document.getElementById('year').textContent = new Date().getFullYear();
 
