@@ -23,4 +23,4 @@ assets/
 
 ## Dış bağımlılıklar
 
-Özel web fontu yok; metin **sistem font stack** ile render edilir. Ölçüm: yalnızca **Google Ads** (`gtag`, AW-17880368457); GTM ve GA4 yok. Google Maps iframe harita işlevi nedeniyle harici olarak bırakıldı.
+Özel web fontu yok; metin **sistem font stack** ile render edilir. Ölçüm: **Google Ads** (`gtag`, AW-17880368457) + **Meta Pixel** (1102594515507353); scroll/tıklama/idle sonrası yüklenir. GTM ve GA4 yok. Google Maps iframe harita işlevi nedeniyle harici olarak bırakıldı.

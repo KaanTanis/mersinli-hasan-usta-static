@@ -20,7 +20,7 @@
     "name": "Et Tantuni Mersin",
     "description": "Et tantuni Mersin Yenişehir'de Hasan Usta'da. Lavaş, açık ekmek, sütlü somun ve yoğurtlu et tantuni. Sipariş: 0324 326 55 66.",
     "url": "https://www.mersinlihasanustatantuni.com/et-tantuni/",
-    "hasMenuItem": [{"@type":"MenuItem","name":"Et Tantuni - Lavaş Ekmek","offers":{"@type":"Offer","price":"180","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Açık Ekmek","offers":{"@type":"Offer","price":"180","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Sütlü Somun","offers":{"@type":"Offer","price":"200","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Yoğurtlu","offers":{"@type":"Offer","price":"210","priceCurrency":"TRY"}}]
+    "hasMenuItem": [{"@type":"MenuItem","name":"Et Tantuni - Lavaş Ekmek","offers":{"@type":"Offer","price":"300","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Açık Ekmek","offers":{"@type":"Offer","price":"300","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Sütlü Somun","offers":{"@type":"Offer","price":"310","priceCurrency":"TRY"}},{"@type":"MenuItem","name":"Et Tantuni - Yoğurtlu","offers":{"@type":"Offer","price":"330","priceCurrency":"TRY"}}]
   }
   </script>
   <link rel="stylesheet" href="/assets/landing.css" />
@@ -43,6 +43,20 @@
       setTimeout(callback, 800);
       return false;
     }
+    window.loadMetaPixel = function () {
+      if (window.__hasanMetaPixelLoaded) return;
+      window.__hasanMetaPixelLoaded = true;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1102594515507353');
+      fbq('track', 'PageView');
+    };
     window.loadHasanAnalytics = function () {
       if (window.__hasanAnalyticsLoaded) return;
       window.__hasanAnalyticsLoaded = true;
@@ -54,10 +68,13 @@
         gtag('config', 'AW-17880368457');
       };
       document.head.appendChild(g);
+      window.loadMetaPixel();
     };
   </script>
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1102594515507353&amp;ev=PageView&amp;noscript=1" /></noscript>
   <div class="topbar">
     <span>Sipariş Hattı</span>
     <a href="tel:+903243265566">0324 326 55 66</a>
@@ -99,28 +116,28 @@
             <img src="/assets/product-et-lavas-480.webp" srcset="/assets/product-et-lavas-320.webp 320w, /assets/product-et-lavas-480.webp 480w, /assets/product-et-lavas.webp 720w" sizes="(max-width:560px) 92vw, 280px" width="320" height="214" alt="Et Tantuni - Lavaş Ekmek" fetchpriority="high" decoding="sync" />
             <div>
               <h3>Et Tantuni - Lavaş Ekmek</h3>
-              <p><span class="price">180₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
+              <p><span class="price">300₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
             </div>
           </article>
           <article class="product">
             <img src="/assets/product-et-acik-480.webp" srcset="/assets/product-et-acik-320.webp 320w, /assets/product-et-acik-480.webp 480w, /assets/product-et-acik.webp 720w" sizes="(max-width:560px) 92vw, 280px" width="320" height="214" alt="Et Tantuni - Açık Ekmek" loading="lazy" decoding="async" />
             <div>
               <h3>Et Tantuni - Açık Ekmek</h3>
-              <p><span class="price">180₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
+              <p><span class="price">300₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
             </div>
           </article>
           <article class="product">
             <img src="/assets/product-et-sutlu-somun-480.webp" srcset="/assets/product-et-sutlu-somun-320.webp 320w, /assets/product-et-sutlu-somun-480.webp 480w, /assets/product-et-sutlu-somun.webp 720w" sizes="(max-width:560px) 92vw, 280px" width="320" height="214" alt="Et Tantuni - Sütlü Somun" loading="lazy" decoding="async" />
             <div>
               <h3>Et Tantuni - Sütlü Somun</h3>
-              <p><span class="price">200₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
+              <p><span class="price">310₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
             </div>
           </article>
           <article class="product">
             <img src="/assets/product-et-yogurtlu-480.webp" srcset="/assets/product-et-yogurtlu-320.webp 320w, /assets/product-et-yogurtlu-480.webp 480w, /assets/product-et-yogurtlu.webp 720w" sizes="(max-width:560px) 92vw, 280px" width="320" height="214" alt="Et Tantuni - Yoğurtlu" loading="lazy" decoding="async" />
             <div>
               <h3>Et Tantuni - Yoğurtlu</h3>
-              <p><span class="price">210₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
+              <p><span class="price">330₺</span><a class="order" href="tel:+903243265566">Ara</a></p>
             </div>
           </article>
         </div>

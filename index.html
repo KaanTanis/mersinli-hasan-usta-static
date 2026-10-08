@@ -103,23 +103,23 @@
             "@type": "MenuSection",
             "name": "Et Tantuni",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Et Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "210", "priceCurrency": "TRY" } },
-              { "@type": "MenuItem", "name": "Et Tantuni Lavaş", "offers": { "@type": "Offer", "price": "180", "priceCurrency": "TRY" } }
+              { "@type": "MenuItem", "name": "Et Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "330", "priceCurrency": "TRY" } },
+              { "@type": "MenuItem", "name": "Et Tantuni Lavaş", "offers": { "@type": "Offer", "price": "300", "priceCurrency": "TRY" } }
             ]
           },
           {
             "@type": "MenuSection",
             "name": "Biftek Tantuni",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Biftek Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "230", "priceCurrency": "TRY" } },
-              { "@type": "MenuItem", "name": "Biftek Tantuni Lavaş", "offers": { "@type": "Offer", "price": "200", "priceCurrency": "TRY" } }
+              { "@type": "MenuItem", "name": "Biftek Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "TRY" } },
+              { "@type": "MenuItem", "name": "Biftek Tantuni Lavaş", "offers": { "@type": "Offer", "price": "320", "priceCurrency": "TRY" } }
             ]
           },
           {
             "@type": "MenuSection",
             "name": "Tavuk Tantuni",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Tavuk Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "160", "priceCurrency": "TRY" } }
+              { "@type": "MenuItem", "name": "Tavuk Tantuni Yoğurtlu", "offers": { "@type": "Offer", "price": "180", "priceCurrency": "TRY" } }
             ]
           }
         ]
@@ -197,6 +197,20 @@
       setTimeout(callback, 800);
       return false;
     }
+    window.loadMetaPixel = function () {
+      if (window.__hasanMetaPixelLoaded) return;
+      window.__hasanMetaPixelLoaded = true;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1102594515507353');
+      fbq('track', 'PageView');
+    };
     window.loadHasanAnalytics = function () {
       if (window.__hasanAnalyticsLoaded) return;
       window.__hasanAnalyticsLoaded = true;
@@ -208,6 +222,7 @@
         gtag('config', 'AW-17880368457');
       };
       document.head.appendChild(g);
+      window.loadMetaPixel();
     };
   </script>
 
@@ -1216,6 +1231,8 @@
   </style>
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1102594515507353&amp;ev=PageView&amp;noscript=1" /></noscript>
   <div class="topbar">
     <span>Sipariş Hattı</span>
     <a href="tel:+903243265566">0324 326 55 66</a>
@@ -1313,7 +1330,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">300₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1322,7 +1339,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">300₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1331,7 +1348,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">310₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1340,7 +1357,7 @@
             <div class="product-body">
               <div class="product-cat">Et Tantuni</div>
               <h3 class="product-name">Et Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">210₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">330₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Et Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
             </div>
@@ -1355,7 +1372,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">320₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1364,7 +1381,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">200₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">320₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1373,7 +1390,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">220₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">330₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1382,7 +1399,7 @@
             <div class="product-body">
               <div class="product-cat">Biftek Tantuni</div>
               <h3 class="product-name">Biftek Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">230₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">350₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Biftek Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
             </div>
@@ -1397,7 +1414,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Lavaş Ekmek</h3>
-              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">150₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Lavaş sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1406,7 +1423,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Açık Ekmek</h3>
-              <div class="product-foot"><span class="price">120₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">150₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Açık Ekmek sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1415,7 +1432,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Sütlü Somun</h3>
-              <div class="product-foot"><span class="price">130₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Sütlü Somun sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
 
@@ -1424,7 +1441,7 @@
             <div class="product-body">
               <div class="product-cat">Tavuk Tantuni</div>
               <h3 class="product-name">Tavuk Tantuni - Yoğurtlu</h3>
-              <div class="product-foot"><span class="price">160₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">180₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Tavuk Tantuni Yoğurtlu sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
             </div>
@@ -1439,7 +1456,7 @@
             <div class="product-body">
               <div class="product-cat">Tatlılar</div>
               <h3 class="product-name">Künefe</h3>
-              <div class="product-foot"><span class="price">190₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Künefe sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+              <div class="product-foot"><span class="price">250₺</span><a class="order-mini" href="tel:+903243265566" aria-label="Künefe sipariş et"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 17.5L17.5 6.5M17.5 6.5H9.5M17.5 6.5V14.5" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
             </div>
           </article>
             </div>
