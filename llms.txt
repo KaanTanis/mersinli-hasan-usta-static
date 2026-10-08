@@ -8,9 +8,9 @@ Resmi alan adı: mersinlihasanustatantuni.com. Adres: Hürriyet, İsmet İnönü
 
 - [Ana sayfa (Markdown)](https://www.mersinlihasanustatantuni.com/index.md): Menü özeti, NAP, SSS — ajanlar için birincil metin
 - [Ana sayfa (HTML)](https://www.mersinlihasanustatantuni.com/): Tam menü, fiyatlar, harita (#menu, #konum, #iletisim, #sss)
+- [Tavuk Tantuni Mersin](https://www.mersinlihasanustatantuni.com/tavuk-tantuni/)
 - [Et Tantuni Mersin](https://www.mersinlihasanustatantuni.com/et-tantuni/)
 - [Biftek Tantuni Mersin](https://www.mersinlihasanustatantuni.com/biftek-tantuni/)
-- [Tavuk Tantuni Mersin](https://www.mersinlihasanustatantuni.com/tavuk-tantuni/)
 
 ## Optional
 
