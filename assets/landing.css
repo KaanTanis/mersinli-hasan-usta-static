@@ -183,6 +183,18 @@ footer {
   color: var(--muted);
   font-size: 13px;
 }
+footer .wrap > p:first-of-type { margin: 0; }
+.site-credit {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.site-credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-credit a:hover { color: var(--ink); }
 
 .dock {
   display: none;

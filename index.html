@@ -973,11 +973,18 @@
       padding-top: 22px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
       color: rgba(255,255,255,.62);
       font-size: 11px;
     }
+    .footer-credit a {
+      color: rgba(255,255,255,.72);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .footer-credit a:hover { color: #fff; }
 
     .mobile-bar {
       display: none;
@@ -1558,6 +1565,7 @@
 
       <div class="footer-bottom">
         <span>© <span id="year"></span> Mersinli Hasan Usta Tantuni. All rights reserved.</span>
+        <span class="footer-credit">Designed &amp; developed by <a href="https://bilgibahcesi.com/" target="_blank" rel="noopener noreferrer">BilgiBahcesi</a></span>
       </div>
     </div>
   </footer>
