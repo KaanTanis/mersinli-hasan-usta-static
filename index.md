@@ -6,7 +6,7 @@ Mersin Yenişehir'de tantuni restoranı. Resmi web: https://mersinlihasanustatan
 
 - **Telefon sipariş:** 0324 326 55 66 (`+903243265566`)
 - **WhatsApp sipariş:** 0505 462 45 95
-- **Çalışma saatleri:** Restoran her gün 09:00–22:00 · Paket servis her gün 09:00–00:00
+- **Çalışma saatleri:** Restoran her gün 09:00–22:00 · Paket servis her gün 09:00–00:00 (ücretsiz)
 - **Sipariş sayfası:** https://mersinlihasanustatantuni.com/tantuni-siparis/
 - **Konum sayfası:** https://mersinlihasanustatantuni.com/konum/
 - **Adres:** Hürriyet, İsmet İnönü Blv. Çekmez Apt No:292/A, 33120 Yenişehir/Mersin, Türkiye
