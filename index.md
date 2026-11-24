@@ -1,21 +1,24 @@
 # Mersinli Hasan Usta Tantuni
 
-Mersin Yenişehir'de tantuni restoranı. Resmi web: https://www.mersinlihasanustatantuni.com/
+Mersin Yenişehir'de tantuni restoranı. Resmi web: https://mersinlihasanustatantuni.com/
 
 ## İletişim
 
 - **Telefon sipariş:** 0324 326 55 66 (`+903243265566`)
 - **WhatsApp sipariş:** 0505 462 45 95
+- **Çalışma saatleri:** Restoran her gün 09:00–22:00 · Paket servis her gün 09:00–00:00
+- **Sipariş sayfası:** https://mersinlihasanustatantuni.com/tantuni-siparis/
+- **Konum sayfası:** https://mersinlihasanustatantuni.com/konum/
 - **Adres:** Hürriyet, İsmet İnönü Blv. Çekmez Apt No:292/A, 33120 Yenişehir/Mersin, Türkiye
 
 ## Menü (özet)
 
-Et, biftek ve tavuk tantuni; lavaş, açık ekmek, sütlü somun, yoğurtlu seçenekler. Güncel fiyatlar HTML menüde: https://www.mersinlihasanustatantuni.com/#menu
+Et, biftek ve tavuk tantuni; lavaş, açık ekmek, sütlü somun, yoğurtlu seçenekler. Güncel fiyatlar HTML menüde: https://mersinlihasanustatantuni.com/#menu
 
-- Et tantuni: https://www.mersinlihasanustatantuni.com/et-tantuni/
-- Biftek tantuni: https://www.mersinlihasanustatantuni.com/biftek-tantuni/
-- Tavuk tantuni: https://www.mersinlihasanustatantuni.com/tavuk-tantuni/
-- Yoğurtlu tantuni: https://www.mersinlihasanustatantuni.com/#yogurtlu-tantuni
+- Et tantuni: https://mersinlihasanustatantuni.com/et-tantuni/
+- Biftek tantuni: https://mersinlihasanustatantuni.com/biftek-tantuni/
+- Tavuk tantuni: https://mersinlihasanustatantuni.com/tavuk-tantuni/
+- Yoğurtlu tantuni: https://mersinlihasanustatantuni.com/#yogurtlu-tantuni
 
 Öne çıkanlar: yoğurtlu tantuni, biftek tantuni, et tantuni, künefe.
 

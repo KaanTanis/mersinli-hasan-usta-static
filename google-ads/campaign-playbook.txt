@@ -1,7 +1,11 @@
+NOT (Kas 2026): Güncel plan ve son URL'ler için google-ads/optimizasyon-2026-11.md dosyasına bakın.
+Yeni açılış sayfaları: /tantuni-siparis/ (sipariş niyeti) ve /konum/ (en yakın / konum niyeti).
+WhatsApp butonları sitede geçici olarak gizli; reklamda WhatsApp vaat etmeyin.
+
 Mersinli Hasan Usta — Google Ads Quality Score playbook
 =========================================================
 
-Landing URL (tüm gruplar): https://www.mersinlihasanustatantuni.com/
+Landing URL (tüm gruplar): https://mersinlihasanustatantuni.com/
 Dönüşüm: Telefon tıklaması (gtag_report_conversion) + AW-17880368457
 
 1) Kampanya yapısı (Search)

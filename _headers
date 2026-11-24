@@ -41,3 +41,9 @@
 
 /tavuk-tantuni/
   Cache-Control: public, max-age=86400, s-maxage=86400
+
+/tantuni-siparis/
+  Cache-Control: public, max-age=86400, s-maxage=86400
+
+/konum/
+  Cache-Control: public, max-age=86400, s-maxage=86400

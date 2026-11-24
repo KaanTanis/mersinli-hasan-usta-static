@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="https://www.mersinlihasanustatantuni.com"
+BASE="https://mersinlihasanustatantuni.com"
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 ASSETS="$ROOT/assets"
 mkdir -p "$ASSETS"

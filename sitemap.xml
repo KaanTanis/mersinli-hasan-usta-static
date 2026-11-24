@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mersinlihasanustatantuni.com/</loc>
+    <loc>https://mersinlihasanustatantuni.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.mersinlihasanustatantuni.com/tavuk-tantuni/</loc>
+    <loc>https://mersinlihasanustatantuni.com/tantuni-siparis/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mersinlihasanustatantuni.com/et-tantuni/</loc>
+    <loc>https://mersinlihasanustatantuni.com/konum/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mersinlihasanustatantuni.com/biftek-tantuni/</loc>
+    <loc>https://mersinlihasanustatantuni.com/tavuk-tantuni/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mersinlihasanustatantuni.com/index.md</loc>
+    <loc>https://mersinlihasanustatantuni.com/et-tantuni/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mersinlihasanustatantuni.com/biftek-tantuni/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mersinlihasanustatantuni.com/index.md</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -243,6 +243,96 @@ footer a[href*="wa.me"] {
   display: none !important;
 }
 
+/* ---- Bilgi blokları (sipariş / konum / ürün sayfaları) ---- */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.trust strong { color: var(--ink); }
+.btn-lg { min-height: 56px; padding: 14px 24px; font-size: 17px; }
+.section { padding: 32px 0 8px; }
+.section h2 {
+  margin: 0 0 12px;
+  font: 700 clamp(26px, 3.6vw, 38px)/1.08 var(--font-sans);
+  letter-spacing: -.035em;
+}
+.section > .wrap > p { margin: 0 0 16px; max-width: 68ch; color: var(--muted); line-height: 1.7; }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.info-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px 18px 16px;
+}
+.info-card h3 { margin: 0 0 6px; font: 700 17px/1.25 var(--font-sans); }
+.info-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.info-card a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); font-weight: 700; }
+.steps { counter-reset: step; list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 760px; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 14px 16px 14px 58px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  line-height: 1.55;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.hours { width: 100%; max-width: 520px; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.hours th, .hours td { text-align: left; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 15px; }
+.hours tr:first-child th, .hours tr:first-child td { border-top: 0; }
+.hours th { font-weight: 600; color: var(--muted); }
+.hours td { font-weight: 700; }
+.open-now { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; }
+.open-now::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #9a9a9a; }
+.open-now.is-open::before { background: #18a05e; box-shadow: 0 0 0 5px rgba(24,160,94,.12); }
+.price-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.price-list section { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px; }
+.price-list h3 { margin: 0 0 8px; font: 700 18px/1.2 var(--font-sans); }
+.price-list h3 a { text-decoration: underline; text-underline-offset: 3px; }
+.price-list ul { list-style: none; margin: 0; padding: 0; }
+.price-list li { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.price-list li:first-child { border-top: 0; }
+.price-list li span:last-child { font-weight: 700; white-space: nowrap; }
+.faq { display: grid; gap: 10px; max-width: 820px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 0 18px; }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 700; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--red); font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin: 0 0 16px; color: var(--muted); line-height: 1.65; }
+.faq details a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
+.map-embed { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: #e9e1d4; min-height: 340px; display: grid; place-items: center; }
+.map-embed iframe { width: 100%; height: 380px; border: 0; display: block; }
+.areas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.areas li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; }
+@media (max-width: 860px) {
+  .info-grid, .price-list { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 860px) {
   .dock { display: block; }
   .products { grid-template-columns: 1fr 1fr; }

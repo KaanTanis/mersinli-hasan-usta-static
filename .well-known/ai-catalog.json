@@ -3,14 +3,14 @@
   "host": {
     "displayName": "Mersinli Hasan Usta Tantuni",
     "identifier": "mersinlihasanustatantuni.com",
-    "documentationUrl": "https://www.mersinlihasanustatantuni.com/llms.txt"
+    "documentationUrl": "https://mersinlihasanustatantuni.com/llms.txt"
   },
   "entries": [
     {
       "identifier": "urn:air:mersinlihasanustatantuni.com:site:llms-txt",
       "displayName": "llms.txt",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://www.mersinlihasanustatantuni.com/llms.txt",
+      "url": "https://mersinlihasanustatantuni.com/llms.txt",
       "description": "Mersin Yenişehir Hasan Usta Tantuni: adres, telefon ve menü özeti.",
       "tags": ["tantuni", "mersin", "yenisehir", "siparis"],
       "representativeQueries": [
@@ -20,13 +20,13 @@
         "biftek tantuni Mersin"
       ],
       "version": "1.0.0",
-      "updatedAt": "2026-10-07T09:00:00Z"
+      "updatedAt": "2026-11-24T09:00:00Z"
     },
     {
       "identifier": "urn:air:mersinlihasanustatantuni.com:site:homepage-md",
       "displayName": "Homepage (Markdown)",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://www.mersinlihasanustatantuni.com/index.md",
+      "url": "https://mersinlihasanustatantuni.com/index.md",
       "description": "Menü, sipariş hattı ve Yenişehir adresi.",
       "tags": ["menu", "iletisim", "konum"],
       "representativeQueries": [
@@ -36,7 +36,7 @@
         "en yakın tantuni Yenişehir"
       ],
       "version": "1.0.0",
-      "updatedAt": "2026-10-07T09:00:00Z"
+      "updatedAt": "2026-11-24T09:00:00Z"
     }
   ]
 }

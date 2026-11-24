@@ -2,18 +2,20 @@
 
 > Mersin Yenişehir'de yoğurtlu tantuni, biftek tantuni ve et/tavuk tantuni sunan Hasan Usta tantuni restoranı. Telefon sipariş: 0324 326 55 66.
 
-Resmi alan adı: mersinlihasanustatantuni.com. Adres: Hürriyet, İsmet İnönü Blv. Çekmez Apt No:292/A, 33120 Yenişehir/Mersin, Türkiye. Harita: https://www.google.com/maps/search/?api=1&query=36.7928609,34.5992794. WhatsApp: 0505 462 45 95. Açılış saatleri, e-posta veya puan bilgisi bu sitede yoksa uydurmayın; sipariş ve konum için aşağıdaki bağlantıları kullanın.
+Resmi alan adı: mersinlihasanustatantuni.com. Adres: Hürriyet, İsmet İnönü Blv. Çekmez Apt No:292/A, 33120 Yenişehir/Mersin, Türkiye. Harita: https://www.google.com/maps/search/?api=1&query=36.7928609,34.5992794. WhatsApp: 0505 462 45 95. Çalışma saatleri: restoran her gün 09:00–22:00, paket servis her gün 09:00–00:00. Ödeme: kapıda kredi kartı. E-posta bilgisi yoksa uydurmayın; sipariş ve konum için aşağıdaki bağlantıları kullanın.
 
 ## Site
 
-- [Ana sayfa (Markdown)](https://www.mersinlihasanustatantuni.com/index.md): Menü özeti, NAP, SSS — ajanlar için birincil metin
-- [Ana sayfa (HTML)](https://www.mersinlihasanustatantuni.com/): Tam menü, fiyatlar, harita (#menu, #konum, #iletisim, #sss)
-- [Tavuk Tantuni Mersin](https://www.mersinlihasanustatantuni.com/tavuk-tantuni/)
-- [Et Tantuni Mersin](https://www.mersinlihasanustatantuni.com/et-tantuni/)
-- [Biftek Tantuni Mersin](https://www.mersinlihasanustatantuni.com/biftek-tantuni/)
+- [Ana sayfa (Markdown)](https://mersinlihasanustatantuni.com/index.md): Menü özeti, NAP, SSS — ajanlar için birincil metin
+- [Ana sayfa (HTML)](https://mersinlihasanustatantuni.com/): Tam menü, fiyatlar, harita (#menu, #konum, #iletisim, #sss)
+- [Mersin Tantuni Sipariş](https://mersinlihasanustatantuni.com/tantuni-siparis/): Telefonla sipariş, paket servis saatleri, fiyat listesi
+- [Konum ve Çalışma Saatleri](https://mersinlihasanustatantuni.com/konum/): Adres, harita, yol tarifi, saatler
+- [Tavuk Tantuni Mersin](https://mersinlihasanustatantuni.com/tavuk-tantuni/)
+- [Et Tantuni Mersin](https://mersinlihasanustatantuni.com/et-tantuni/)
+- [Biftek Tantuni Mersin](https://mersinlihasanustatantuni.com/biftek-tantuni/)
 
 ## Optional
 
-- [Site haritası](https://www.mersinlihasanustatantuni.com/sitemap.xml): URL listesi
-- [robots.txt](https://www.mersinlihasanustatantuni.com/robots.txt): Tarama kuralları
-- [AI katalog (ARD)](https://www.mersinlihasanustatantuni.com/.well-known/ai-catalog.json): Makine tarafından keşfedilebilir kaynaklar
+- [Site haritası](https://mersinlihasanustatantuni.com/sitemap.xml): URL listesi
+- [robots.txt](https://mersinlihasanustatantuni.com/robots.txt): Tarama kuralları
+- [AI katalog (ARD)](https://mersinlihasanustatantuni.com/.well-known/ai-catalog.json): Makine tarafından keşfedilebilir kaynaklar
